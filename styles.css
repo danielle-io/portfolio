@@ -605,13 +605,13 @@ li.project-details-list span {
 
 .jane-code {
   width: 500px;
-  background: #fff url('/images/JaneVSSmaller.png') no-repeat top left;
+  background: #fff url('./images/JaneVSSmaller.png') no-repeat top left;
   background-size: 100% auto;
 }
 
 .scheduley-code {
   width: 500px;
-  background: #fff url('/images/VisualStudio.png') no-repeat top left;
+  background: #fff url('./images/VisualStudio.png') no-repeat top left;
   background-size: 100% auto;
 }
 
