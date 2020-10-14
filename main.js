@@ -107,7 +107,7 @@ $(window).resize(function () {
     $('#customSwitches').change(function (event) {
       // Dark Mode Settings
       if ($(this).prop("checked")) {
-        document.getElementById('pageBackground').className = "dark-mode";
+        document.getElementById('pageBackgroundColor').className = "dark-mode";
         $('.card').removeClass('background-light').addClass('background-dark');
         $('.project-text').removeClass('text-color-light').addClass('text-color-dark');
         $('.btn-info').removeClass('btn-info-light').addClass('btn-info-dark');
@@ -122,7 +122,7 @@ $(window).resize(function () {
       }
       // Light Mode Settings
       else {
-        document.getElementById('pageBackground').className = "light-mode";
+        document.getElementById('pageBackgroundColor').className = "light-mode";
         $('.card').removeClass('background-dark').addClass('background-light');
         $('.project-text').removeClass('text-color-dark').addClass('text-color-light');
         $('.btn-info').removeClass('btn-info-dark').addClass('btn-info-light');
@@ -136,7 +136,6 @@ $(window).resize(function () {
         $('.close').removeClass('close-dark');
       }
     });
-
   }
 
   function getProjectModalText(containerName) {
