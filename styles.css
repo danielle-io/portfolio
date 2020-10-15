@@ -4,6 +4,8 @@ html, body {
   height: 100%;
 }
 
+html, body { width:100%;  overflow:hidden; }
+
 #pageBackgroundColor {
   min-height: 100%;
 }
