@@ -143,9 +143,6 @@ body {
   .nav {
     display: inline-block !important;
   }
-  .nav-text {
-    display: show !important;
-  }
   .navbar-brand {
     float: right;
   }
