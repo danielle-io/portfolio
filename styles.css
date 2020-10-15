@@ -409,14 +409,6 @@ body {
   display: block !important;
 }
 
-/* @media (max-width: 500px) {
-  .pengwinImage {
-    margin: auto;
-    height: auto;
-    display: block!important;
-  }
-} */
-
 .col-sm {
   -ms-flex-preferred-size: 0;
   flex-basis: 0;
