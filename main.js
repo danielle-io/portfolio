@@ -75,9 +75,42 @@ function checkWindowWidth() {
   }
 }
 
+function lightModeSettings() {
+  document.getElementById('pageBackgroundColor').className = "light-mode";
+  $('.card').removeClass('background-dark').addClass('background-light');
+  $('.project-text').removeClass('text-color-dark').addClass('text-color-light');
+  $('.btn-info').removeClass('btn-info-dark').addClass('btn-info-light');
+  $('.modal-content').removeClass('background-dark').addClass('background-light');
+  $('.card-text').removeClass('text-color-dark').addClass('text-color-light');
+  $('.card-title').removeClass('card-title-dark').addClass('card-title-light');
+  $('.custom-control-label').removeClass('text-color-dark-modified').addClass('text-color-light-modified');
+  $('.project-links').removeClass('links-dark').addClass('links-light');
+  $('.caption-text').removeClass('text-color-dark').addClass('text-color-light');
+  $('.navbar').addClass('navbar-light').removeClass('navbar-dark');
+  $('.close').removeClass('close-dark');
+}
+
+function darkModeSettings() {
+  document.getElementById('pageBackgroundColor').className = "dark-mode";
+  $('.card').removeClass('background-light').addClass('background-dark');
+  $('.project-text').removeClass('text-color-light').addClass('text-color-dark');
+  $('.btn-info').removeClass('btn-info-light').addClass('btn-info-dark');
+  $('.modal-content').removeClass('background-light').addClass('background-dark');
+  $('.card-text').removeClass('text-color-light').addClass('text-color-dark');
+  $('.card-title').removeClass('card-title-light').addClass('card-title-dark');
+  $('.custom-control-label').removeClass('text-color-light-modified').addClass('text-color-dark-modified');
+  $('.project-links').removeClass('links-light').addClass('links-dark');
+  $('.caption-text').removeClass('text-color-light').addClass('text-color-dark');
+  $('.navbar').addClass('navbar-dark').removeClass('navbar-light');
+  $('.close').addClass('close-dark');
+}
+
 // Modify elements to window width on load
 $(document).ready(function () {
   checkWindowWidth();
+  if ($(darkModeSwitch).prop("checked")) {
+    darkModeSettings();
+  }
 });
 
 // Modify elements when window resized
@@ -108,36 +141,13 @@ $(window).resize(function () {
       getProjectModalText(event.target.id);
     });
 
-    $('#customSwitches').change(function (event) {
-      // Dark Mode Settings
+    $('#darkModeSwitch').change(function (event) {
+
       if ($(this).prop("checked")) {
-        document.getElementById('pageBackgroundColor').className = "dark-mode";
-        $('.card').removeClass('background-light').addClass('background-dark');
-        $('.project-text').removeClass('text-color-light').addClass('text-color-dark');
-        $('.btn-info').removeClass('btn-info-light').addClass('btn-info-dark');
-        $('.modal-content').removeClass('background-light').addClass('background-dark');
-        $('.card-text').removeClass('text-color-light').addClass('text-color-dark');
-        $('.card-title').removeClass('card-title-light').addClass('card-title-dark');
-        $('.custom-control-label').removeClass('text-color-light-modified').addClass('text-color-dark-modified');
-        $('.project-links').removeClass('links-light').addClass('links-dark');
-        $('.caption-text').removeClass('text-color-light').addClass('text-color-dark');
-        $('.navbar').addClass('navbar-dark').removeClass('navbar-light');
-        $('.close').addClass('close-dark');
+        darkModeSettings();
       }
-      // Light Mode Settings
       else {
-        document.getElementById('pageBackgroundColor').className = "light-mode";
-        $('.card').removeClass('background-dark').addClass('background-light');
-        $('.project-text').removeClass('text-color-dark').addClass('text-color-light');
-        $('.btn-info').removeClass('btn-info-dark').addClass('btn-info-light');
-        $('.modal-content').removeClass('background-dark').addClass('background-light');
-        $('.card-text').removeClass('text-color-dark').addClass('text-color-light');
-        $('.card-title').removeClass('card-title-dark').addClass('card-title-light');
-        $('.custom-control-label').removeClass('text-color-dark-modified').addClass('text-color-light-modified');
-        $('.project-links').removeClass('links-dark').addClass('links-light');
-        $('.caption-text').removeClass('text-color-dark').addClass('text-color-light');
-        $('.navbar').addClass('navbar-light').removeClass('navbar-dark');
-        $('.close').removeClass('close-dark');
+        lightModeSettings();
       }
     });
   }

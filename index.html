@@ -30,8 +30,8 @@
           <!-- <span class="nav-text"> -->
           <span class="custom-control custom-switch custom-switch-md" data-toggle="tooltip" data-placement="right"
             title="Toggle Dark Mode">
-            <input type="checkbox" class="custom-control-input" id="customSwitches">
-            <label id="toggleLabel" class="custom-control-label text-color-light-modified" for="customSwitches">Toggle
+            <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
+            <label id="toggleLabel" class="custom-control-label text-color-light-modified" for="darkModeSwitch">Toggle
               Dark Mode</label>
           </span>
           <!-- </span> -->
@@ -591,45 +591,65 @@
 
               <!-- Conectar Card Back -->
               <div id="conectarCardBack" class="card-face card-face--back hide-element">
-                <div style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="card-body">
 
-                  <div class="row" style="justify-content: center; margin-bottom: 10px">
-                    <div id="conectarContainer" class="img-container">
-                      <div class="img-inner">
-                        <img src="./images/csr.jpg"
-                          alt="Receiving a certificate after presenting initial CONECTAR research questions at CSR event."
-                          class="center-block d-block w-100" style="margin: auto; width: 50% !important; height: auto">
+                  <div style="margin-top: 20px; margin-bottom: 20px;">
+
+                    <div class="row" style="justify-content: center; margin-bottom: 10px">
+                      <div id="conectarContainer" class="img-container">
+                        <div class="img-inner">
+                          <img src="./images/csr.jpg"
+                            alt="Receiving a certificate after presenting initial CONECTAR research questions at CSR event."
+                            class="center-block d-block w-100"
+                            style="margin: auto; width: 50% !important; height: auto">
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="row" style="justify-content: center;">
-                    <div id="csrContainer" class="img-container">
-                      <div class="img-inner">
-                        <img src="./images/conectar.JPG"
-                          alt="An image of the CONECTAR curriculum from the second link below."
-                          class="center-block d-block w-100" style="margin: auto; width: 70% !important; height: auto">
+                    <div class="row" style="justify-content: center;">
+                      <div class="col">
+                        <div id="csrContainer" class="img-container">
+                          <div class="img-inner">
+                            <img src="./images/conectar.JPG"
+                              alt="An image of the CONECTAR curriculum from the second link below."
+                              class="center-block d-block w-100"
+                              style="margin: auto; width: 70% !important; height: auto">
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="row">
-                    <a style="margin-top: 10px;" class="project-links links-light"
-                      href="http://education.uci.edu/ucisoe_news/nsf_grant_computation_thinking" target="_blank">
-                      <em class="material-icons" style="vertical-align: middle;">article</em>
-                      Interested in CONECTAR? Learn more here</a>
-                  </div>
-                  <div class="row">
+                    <div class="row project-links links-light">
+                      <div class="col-sm">
+                        <em class="material-icons" style="vertical-align: middle;">article</em>
+                      </div>
+                      <div class="col">
 
-                    <a style="margin-top: 10px;" class="project-links links-light"
-                      href="https://sites.google.com/uci.edu/uci-conectar-4th/level-1-curriculum-2-0" target="_blank">
-                      <em class="material-icons" style="vertical-align: middle;">article</em>
-                      CONECTAR curriculum</a>
+                        <a style="word-wrap: break-word; flex-wrap: wrap; display: block; "
+                          href="http://education.uci.edu/ucisoe_news/nsf_grant_computation_thinking" target="_blank">
+                          Learn more about Conectar</a>
+                      </div>
+                    </div>
+
+
+                    <div class="row project-links links-light">
+                      <div class="col-sm">
+                        <em class="material-icons" style="vertical-align: middle;">article</em>
+                      </div>
+                      <div class="col">
+
+                        <a style="word-wrap: break-word; flex-wrap: wrap; display: block;"
+                          href="https://sites.google.com/uci.edu/uci-conectar-4th/level-1-curriculum-2-0"
+                          target="_blank">
+                          CONECTAR curriculum</a>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
 
           <div class="card-columns body-text">
