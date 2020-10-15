@@ -56,22 +56,31 @@ function checkWindowWidth() {
   else {
     document.getElementById('toggleLabel').innerHTML = "Toggle Dark Mode";
   }
-
-  // Modal placement change
+  // Mobile
   if (windowWidth <= 500) {
     $('.modal-dialog').removeClass('modal-collapsed').addClass('modal-expanded');
-    $('.clickHere').html("Click For More Info")
+    $('.clickHere').html("Click For More Info");
+    $('.memorable').html("Memorable Accomplishments");
+    document.getElementById("contactForm").height = "1200"; 
+    $('.downloadPdf').addClass('none');
+    $('.downloadLink').removeClass('none');
   }
   else {
     $('.modal-dialog').removeClass('modal-expanded').addClass('modal-collapsed');
     $('.clickHere').html("Click Here For Additional Info / Images")
+    $('.memorable').html("My Memorable Accomplishments On This Project");
+    document.getElementById("contactForm").height = "900"; 
+    $('.downloadPdf').removeClass('none');
+    $('.downloadLink').addClass('none');
   }
 }
 
+// Modify elements to window width on load
 $(document).ready(function () {
   checkWindowWidth();
 });
 
+// Modify elements when window resized
 $(window).resize(function () {
   checkWindowWidth();
 });

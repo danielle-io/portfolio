@@ -711,6 +711,12 @@ li.project-details-list span {
   margin-bottom: 10px;
 }
 
+@media (max-width: 500px) {
+  .resume-image {
+    width: 90% !important;
+  }
+}
+
 .download-link-and-icon {
   /* color: #73b0b9; */
   font-family: 'Poppins';
@@ -729,7 +735,6 @@ li.project-details-list span {
 }
 
 /* CONTACT PAGE */
-
 form {
   margin-left: 20%;
   margin-right: 20%;
