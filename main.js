@@ -61,17 +61,19 @@ function checkWindowWidth() {
     $('.modal-dialog').removeClass('modal-collapsed').addClass('modal-expanded');
     $('.clickHere').html("Click For More Info");
     $('.memorable').html("Memorable Accomplishments");
-    document.getElementById("contactForm").height = "1200"; 
+    document.getElementById("contactForm").height = "1200";
     $('.downloadPdf').addClass('none');
     $('.downloadLink').removeClass('none');
+    $('.virtualHelpImages').addClass('none');
   }
   else {
     $('.modal-dialog').removeClass('modal-expanded').addClass('modal-collapsed');
     $('.clickHere').html("Click Here For Additional Info / Images")
     $('.memorable').html("My Memorable Accomplishments On This Project");
-    document.getElementById("contactForm").height = "900"; 
+    document.getElementById("contactForm").height = "900";
     $('.downloadPdf').removeClass('none');
     $('.downloadLink').addClass('none');
+    $('.virtualHelpImages').removeClass('none');
   }
 }
 
@@ -120,7 +122,7 @@ $(window).resize(function () {
         $('.card-title').removeClass('card-title-light').addClass('card-title-dark');
         $('.custom-control-label').removeClass('text-color-light-modified').addClass('text-color-dark-modified');
         $('.project-links').removeClass('links-light').addClass('links-dark');
-        $('.download-link-and-icon').removeClass('links-light').addClass('links-dark');
+        // $('.download-link-and-icon').removeClass('links-light').addClass('links-dark');
         $('.caption-text').removeClass('text-color-light').addClass('text-color-dark');
         $('.navbar').addClass('navbar-dark').removeClass('navbar-light');
         $('.close').addClass('close-dark');
@@ -136,7 +138,7 @@ $(window).resize(function () {
         $('.card-title').removeClass('card-title-dark').addClass('card-title-light');
         $('.custom-control-label').removeClass('text-color-dark-modified').addClass('text-color-light-modified');
         $('.project-links').removeClass('links-dark').addClass('links-light');
-        $('.download-link-and-icon').removeClass('links-dark').addClass('links-light');
+        // $('.download-link-and-icon').removeClass('links-dark').addClass('links-light');
         $('.caption-text').removeClass('text-color-dark').addClass('text-color-light');
         $('.navbar').addClass('navbar-light').removeClass('navbar-dark');
         $('.close').removeClass('close-dark');
@@ -165,6 +167,9 @@ $(window).resize(function () {
         descriptionText = projectData.VirtualHelp.descriptionText;
         accomplishmentsText = projectData.VirtualHelp.accomplishmentsText;
         imagesText = projectData.VirtualHelp.imagesText;
+        if ($window.width() <= 500) {
+          imagesText = "";
+        }
         break;
       case "UntitledJaneGame":
         titleText = "Untitled Jane Game";
