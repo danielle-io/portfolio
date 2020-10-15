@@ -413,6 +413,7 @@ body {
   .pengwinImage {
     margin: auto;
     height: auto;
+    display: block!important;
   }
 }
 
