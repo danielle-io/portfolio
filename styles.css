@@ -19,6 +19,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.img-container {
+  position: relative;
+}
+
+.img-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
 .light-mode {
   background-color: white;
 }
@@ -127,6 +137,14 @@ body {
 
 .navbar-toggler {
   margin-top: 24px;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .desktopOnly {
+    display: none;
+  }
 }
 
 @media (max-width: 680px) {
