@@ -120,7 +120,7 @@ body {
 
 /* Nav Drawer Styling for Mobile */
 
-.navbar-toggler collapsed {
+.navbar-toggler {
   margin-top: 24px;
 }
 
@@ -195,6 +195,7 @@ body {
 }
 
 /*  HOME PAGE */
+
 .text-wrapper {
   font-weight: bold;
   position: relative;
@@ -230,6 +231,7 @@ body {
 }
 
 /* Mobile */
+
 @media (max-width: 500px) {
   .firstNameText {
     font-size: 3.3em;
@@ -240,6 +242,7 @@ body {
 }
 
 /* Small Browser Window */
+
 @media (min-width: 501px) and (max-width: 575px) {
   .firstNameText {
     font-size: 4.5em;
@@ -250,6 +253,7 @@ body {
 }
 
 /* Full Screen */
+
 @media (min-width: 576px) {
   .firstNameText {
     font-size: 5.5em;
@@ -537,6 +541,7 @@ li.project-details-list::before {
 .project-links {
   font-weight: 500;
   margin-left: 30px;
+  display: block;
 }
 
 .links-light {

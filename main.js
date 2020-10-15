@@ -60,9 +60,11 @@ function checkWindowWidth() {
   // Modal placement change
   if (windowWidth <= 500) {
     $('.modal-dialog').removeClass('modal-collapsed').addClass('modal-expanded');
+    $('.clickHere').html("Click For More Info")
   }
   else {
     $('.modal-dialog').removeClass('modal-expanded').addClass('modal-collapsed');
+    $('.clickHere').html("Click Here For Additional Info / Images")
   }
 }
 
