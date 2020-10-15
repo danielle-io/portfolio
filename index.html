@@ -851,28 +851,29 @@
               </div>
 
               <!-- Main Image -->
-              <div class="row">
+              <!-- <div class="row">
                 <img style="width: 50% !important; height: auto; margin: auto;" class="pengwinImage" src="./images/pengwinCrop.gif"
                   alt="A gif of the PengWin interface, interacting with Activities">
-              </div>
+              </div> -->
 
               <!-- Test image -->
               <div class="row">
                 <div id="tempCarousel" stlye="height: 400px;" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="./images/pengwinCrop.gif" alt="A gif of the PengWin interface, interacting with Activities"
+                      <img src="./images/pengwinCrop.gif"
+                        alt="A gif of the PengWin interface, interacting with Activities"
                         class="center-block d-block w-100" style="margin: auto; width: 70% !important; height: auto">
                     </div>
                   </div>
-                  <a class="carousel-control-prev" href="#tempCarousel" role="button" data-slide="prev">
+                  <!-- <a class="carousel-control-prev" href="#tempCarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
                   <a class="carousel-control-next" href="#tempCarousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
-                  </a>
+                  </a> -->
                 </div>
               </div>
 
@@ -890,7 +891,8 @@
 
                 <!-- Main Image -->
                 <div class="row">
-                  <img src="./images/virtualHelp1.gif" style="width: 100%; height: auto;" class="virtualHelpImages card-img-top"
+                  <img src="./images/virtualHelp1.gif" style="width: 100%; height: auto;"
+                    class="virtualHelpImages card-img-top"
                     alt="A gif of a TA pairing with a student on Virtual Help UI">
                 </div>
 
@@ -1153,10 +1155,30 @@
                 </div>
 
                 <!-- Main Image -->
-                <div class="row">
+                <!-- <div class="row">
                   <img src="./images/icsSearchMondego.gif" class="card-img-top"
                     style="margin: auto; width: 80% !important;"
                     alt="A demo of searching 'Mondego' on the Search Engine UI">
+                </div> -->
+
+                <div class="row">
+                  <div id="searchEngineCarousel" stlye="height: 400px;" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./images/icsSearchMondego.gif"
+                          alt="A demo of searching 'Mondego' on the Search Engine UI" class="center-block d-block w-100"
+                          style="margin: auto; width: 70% !important; height: auto">
+                      </div>
+                    </div>
+                    <!-- <a class="carousel-control-prev" href="#searchEngineCarousel" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#searchEngineCarousel" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a> -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -1256,7 +1278,7 @@
 
           <!-- Resume Download -->
           <div class="download-and-resume-container body-text">
-           
+
             <span class="downloadPdf">
               <a href="/files/Muhlenberg_Danielle_Resume.pdf" class="download-link-and-icon"
                 download="muhlenberg_danielle_resume.pdf">
@@ -1299,10 +1321,13 @@
 
           <div>
 
-            <div class="resp-container">
-              <iframe id="contactForm" onload="window.parent.scrollTo(0,0)" class="resp-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSf17As2hNBK6_CYhWgVNFNS5Hb0XGSrbPbWutgtgmdvw_LZ1Q/viewform?embedded=true" 
-              gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
-          </div>
+            <div style="overflow: auto!important; -webkit-overflow-scrolling: touch!important;">
+
+              <!-- <div class="resp-container"> -->
+              <iframe id="contactForm" onload="window.parent.scrollTo(0,0)" class="resp-iframe"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSf17As2hNBK6_CYhWgVNFNS5Hb0XGSrbPbWutgtgmdvw_LZ1Q/viewform?embedded=true"
+                gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+            </div>
 
             <!-- <iframe 
               width="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
