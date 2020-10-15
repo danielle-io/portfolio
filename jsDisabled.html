@@ -19,7 +19,6 @@
   <title>Danielle Muhlenberg</title>
 
   <noscript>
-    <link rel="stylesheet" href="noJsStyles.css">
   </noscript>
 </head>
 
@@ -27,103 +26,38 @@
 
   <div id="pageBackgroundColor" class="light-mode">
 
-    <nav class="nav navbar navbar-expand-md navbar-light">
-      <div id="nav-width" class="regular-nav-width">
-        <span class="navbar-brand mr-1">
-
-          <span class="custom-control custom-switch custom-switch-md" data-toggle="tooltip" data-placement="right"
-            title="Toggle Dark Mode">
-            <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
-            <label id="toggleLabel" class="custom-control-label text-color-light-modified" for="darkModeSwitch">Toggle
-              Dark Mode</label>
-          </span>
-
-        </span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-
-      <div class="navbar-collapse collapse justify-content-center order-2" id="collapsingNavbar">
-        <ul class="nav justify-content-center">
-
-          <li class="nav-item">
-            <a id="home" class="nav-link nav-active" href="#">
-              <span class="material-icons nav-icons">
-                home
-              </span>
-              <span class="nav-text">Home</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a id="about" class="nav-link nav-inactive" href="#">
-              <span class="material-icons nav-icons">
-                info
-              </span>
-              <span class="nav-text">About</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a id="projects" class="nav-link nav-inactive" href="#">
-              <span class="material-icons nav-icons">
-                code
-              </span>
-              <span class="nav-text">Projects</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a id="resume" class="nav-link nav-inactive" href="#">
-              <span class="material-icons nav-icons">
-                insert_drive_file
-              </span>
-              <span class="nav-text">Resume</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a id="contact" class="nav-link nav-inactive" href="#">
-              <span class="material-icons nav-icons">
-                contact_page
-              </span>
-              <span class="nav-text">Contact</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
 
-    <div class="page-container">
+    <div class="page-container-js-disabled">
 
       <!-- HOME PAGE -->
-      <div id="homeCollapse" class="collapse">
+      <div id="homeCollapse">
+
+        <h5 style="color: #917896;">JavaScript is disabled - Please visit this site with JavaScript enabled for best
+          results.</h5>
 
         <div class="home-center-page">
 
           <!-- Name Header -->
-          <div class="firstName">
-            <span class="text-wrapper">
-              <span class="firstNameText name-header">
-                Danielle
-              </span>
+          <div class="firstName firstNameText letter">
+            <span class="name-header">
+              Danielle
             </span>
           </div>
-          <div class="lastName">
-            <span class="text-wrapper">
-              <span class="lastNameText name-header">
-                Muhlenberg
-              </span>
+          <br>
+          <div class="lastName lastNameText letter">
+            <span class="name-header">
+              Muhlenberg
             </span>
           </div>
 
-
-          <!-- Social Links -->
           <div class="social-links">
             <a href="https://www.linkedin.com/in/danielle-amanda/" rel="noopener noreferrer" target="_blank">
-              <em class="social-link-icons icon-linkedin"></em>
+              <em class="social-link-icons-no-js icon-linkedin"></em>
             </a>
 
             <a href="https://github.com/danielle-io" rel="noopener noreferrer" target="_blank">
-              <em class="social-link-icons icon-github"></em>
+              <em class="social-link-icons-no-js icon-github"></em>
             </a>
           </div>
         </div>
@@ -131,12 +65,8 @@
 
 
       <!-- ABOUT PAGE -->
-      <div id="aboutCollapse" class="collapse">
+      <div id="aboutCollapse">
         <div>
-
-          <div class="subtitle" style="margin-top: 30px; margin-bottom: 10px;">Click the cards below to see additional
-            info and images.
-          </div>
 
           <h5 class="card-title card-title-light"> <span class="material-icons nav-icons">
               laptop
@@ -145,7 +75,7 @@
           <div class="card-columns body-text">
 
             <!-- About Me Card -->
-            <div id="aboutMeCard" class="card card-flip">
+            <div id="aboutMeCard" class="card">
 
               <div id="aboutMeCardFront" class="card-face card-face--front">
                 <div class="card-body">
@@ -269,7 +199,7 @@
             </div>
 
             <!-- WICS Card -->
-            <div id="wicsCard" class="card card-flip background-light">
+            <div id="wicsCard" class="card background-light">
 
               <div id="wicsCardFront" class="card-face card-face--front">
                 <div class="card-body">
@@ -426,7 +356,7 @@
 
 
             <!-- NASA Card -->
-            <div id="nasaCard" class="card card-flip background-light ">
+            <div id="nasaCard" class="card  background-light ">
 
               <div id="nasaCardFront" class="card-face card-face--front">
                 <div class="card-body">
@@ -518,7 +448,7 @@
             </div>
 
             <!-- Conectar Card -->
-            <div id="conectarCard" class="card card-flip background-light">
+            <div id="conectarCard" class="card  background-light">
 
               <div id="conectarCardFront" class="card-face card-face--front">
                 <div class="card-body">
@@ -658,7 +588,7 @@
 
 
             <!-- SANA Card -->
-            <div id="sanaCard" class="card card-flip background-light">
+            <div id="sanaCard" class="card  background-light">
 
               <div id="sanaCardFront" class="card-face card-face--front">
                 <div class="card-body">
@@ -768,7 +698,7 @@
             </div>
 
             <!-- Security Card -->
-            <div id="securityCard" class="card card-flip background-light">
+            <div id="securityCard" class="card  background-light">
 
               <div id="securityCardFront" class="card-face card-face--front">
                 <div class="card-body">
@@ -870,7 +800,10 @@
       </div>
 
 
-      <div id="projectsCollapse" class="collapse">
+      <div id="projectsCollapse">
+        <h5 class="card-title card-title-light"> <span class="material-icons nav-icons">
+            code
+          </span> Projects</h5>
 
         <div class="card-columns project-columns body-text">
 
@@ -946,24 +879,6 @@
                     Firebase &nbsp;&nbsp;
                     MySQL &nbsp;&nbsp; Google Vision &nbsp;&nbsp; Expo
                   </span>
-                </div>
-              </div>
-
-              <!-- View More -->
-              <div class="row">
-                <div class="col-sm">
-                  <span class="project-subtitle">
-                    <span class="card-icons material-icons">
-                      category
-                    </span>
-                  </span>
-                </div>
-
-                <div class="col">
-                  <button type="button" data-toggle="modal" data-target="#projectModal" id="PengWin"
-                    class="clickHere btn-sm project-modal-link btn-info btn-info-light">Click Here For Additional Info
-                    /
-                    Images</button>
                 </div>
               </div>
 
@@ -1056,23 +971,6 @@
                   </div>
                 </div>
 
-                <!-- View More -->
-                <div class="row">
-                  <div class="col-sm">
-                    <span class="project-subtitle">
-                      <span class="card-icons material-icons">
-                        category
-                      </span>
-                    </span>
-                  </div>
-
-                  <div class="col">
-                    <button type="button" data-toggle="modal" data-target="#projectModal" id="VirtualHelp"
-                      class="clickHere btn-sm project-modal-link btn-info btn-info-light">Click Here For Additional
-                      Info
-                      / Images</button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -1140,25 +1038,6 @@
                   </div>
                 </div>
 
-                <!-- View More -->
-                <div class="row">
-                  <div class="col-sm">
-                    <span class="project-subtitle">
-                      <span class="card-icons material-icons">
-                        category
-                      </span>
-                    </span>
-                  </div>
-
-                  <div class="col">
-                    <button type="button" data-toggle="modal" data-target="#projectModal" id="UntitledJaneGame"
-                      class="clickHere btn-sm project-modal-link btn-info btn-info-light">Click Here For Additional
-                      Info
-                      /
-                      Images</button>
-                  </div>
-                </div>
-
                 <!-- Main Image -->
                 <div class="row">
                   <div id="janeGameCarousel" class="carousel slide" data-ride="carousel">
@@ -1176,14 +1055,6 @@
                           style="margin: auto; width: 70% !important; height: auto">
                       </div>
                     </div>
-                    <a class="carousel-control-prev" href="#janeGameCarousel" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#janeGameCarousel" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
                   </div>
                 </div>
 
@@ -1237,25 +1108,6 @@
                   </div>
                 </div>
 
-                <!-- View More -->
-                <div class="row">
-                  <div class="col-sm">
-                    <span class="project-subtitle">
-                      <span class="card-icons material-icons">
-                        category
-                      </span>
-                    </span>
-                  </div>
-
-                  <div class="col">
-                    <button type="button" data-toggle="modal" data-target="#projectModal" id="ICSSearchEngine"
-                      class="clickHere btn-sm project-modal-link btn-info btn-info-light">Click Here For Additional
-                      Info
-                      /
-                      Images</button>
-                  </div>
-                </div>
-
                 <div class="row">
                   <div id="searchEngineContainer" class="img-container">
                     <div class="img-inner">
@@ -1268,99 +1120,11 @@
               </div>
             </div>
           </div>
-
-
-
-          <!-- Scheduley -->
-          <div id="ScheduleyCard" class="card">
-            <div class="card-body">
-
-              <!-- Title -->
-              <h5 class="card-title card-title-center card-title-light">Scheduley</h5>
-              <div class="project-text text-color-light">
-
-                <!-- Description -->
-                <div class="row">
-                  <div class="col-sm">
-                    <span class="project-subtitle">
-                      <span class="card-icons material-icons">
-                        info
-                      </span>
-                    </span>
-                  </div>
-
-                  <div class="col">
-                    I worked with another team member to create a multi-user scheduling web application using
-                    MongoDB to store combined user calendars accessed from Google Calendar’s API.
-                  </div>
-                </div>
-
-                <!-- Tools -->
-                <div class="row">
-                  <div class="col-sm">
-                    <span class="project-subtitle">
-                      <span class="card-icons material-icons">
-                        build
-                      </span>
-                    </span>
-                  </div>
-
-                  <div class="col">
-                    <span class="technologies project-text text-color-light">MongoDB &nbsp;&nbsp; Node.js &nbsp;&nbsp;
-                      Javascript &nbsp;&nbsp; HTML &nbsp;&nbsp; CSS &nbsp;&nbsp; Google Calendar API
-                    </span>
-                  </div>
-                </div>
-
-                <!-- View More -->
-                <div class="row">
-                  <div class="col-sm">
-                    <span class="project-subtitle">
-                      <span class="card-icons material-icons">
-                        category
-                      </span>
-                    </span>
-                  </div>
-
-                  <div class="col">
-                    <button type="button" data-toggle="modal" data-target="#projectModal" id="Scheduley"
-                      class="clickHere btn-sm project-modal-link btn-info btn-info-light">Click Here For Additional
-                      Info
-                      / Images</button>
-                  </div>
-                </div>
-
-                <!-- Code Image -->
-                <div class="row" style="justify-content: center">
-
-
-                  <div style="overflow-y: auto; display:flex; margin-top: 6px; justify-content: center;">
-                    <div id="code-background-image-front" aria-label="Background image of an IDE with sample code">
-                      <div style="padding-bottom: 50px;"></div>
-                      <pre id="code-front" class="inner-code-dark">
-                </pre>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <span class="caption-text text-color-light" style="font-style: italic;">
-                        <small>
-                          Scroll through some sample code from this project.
-                        </small>
-                      </span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
       </div>
 
       <!-- Resume Container -->
-      <div id="resumeCollapse" class="collapse">
+      <div id="resumeCollapse">
         <div>
 
           <!-- Resume Download -->
@@ -1399,7 +1163,7 @@
       </div>
 
       <!-- CONTACT PAGE -->
-      <div id="contactCollapse" class="collapse">
+      <div id="contactCollapse">
         <div style="margin-bottom: 20px;">
           <h1 class="page-header">Say Hello!
           </h1>
@@ -1513,12 +1277,9 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script> -->
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  
+    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
@@ -1526,10 +1287,6 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="data.js"></script>
-  <script src="main.js"></script>
-
 </body>
-<noscript>
-  <META HTTP-EQUIV="Refresh" CONTENT="0;URL=jsDisabled.html">
-</noscript>
+
 </html>

@@ -130,14 +130,24 @@ $(window).resize(function () {
         removeActiveFromNavItems('#' + this.id);
         collapseAndExpandContainers('#' + this.id);
       }
+      else {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+      }
     });
 
     $('.card-flip').on('click', function (event) {
+
+      $('.card-face card-face--front').css('animation', 'none');
+      $('.card-face card-face--back hide-element').css('animation', 'none');
+
+
+      
       var element = document.getElementById(this.id);
       element.classList.toggle("is-flipped");
 
       $('#' + this.id + 'Front').toggle('hide-element');
       $('#' + this.id + 'Back').toggle('hide-element');
+      setTimeout(() => {  console.log("oui") }, 1000);
     });
 
     $('.project-modal-link').on('click', function (event) {
@@ -221,6 +231,7 @@ $(window).resize(function () {
   function collapseAndExpandContainers(itemName) {
     $('.collapse').collapse('hide', true);
     $(itemName + "Collapse").collapse('show', true);
+    $('html, body').animate({ scrollTop: 0 }, 'fast');
   }
 
   addHandlers();
