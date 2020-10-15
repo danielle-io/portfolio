@@ -120,7 +120,11 @@ body {
 
 /* Nav Drawer Styling for Mobile */
 
-@media (max-width: 681px) {
+.navbar-toggler collapsed {
+  margin-top: 18px;
+}
+
+@media (max-width: 680px) {
   .nav {
     display: inline-block !important;
     /* justify-content: flex-start !important; */
@@ -137,8 +141,20 @@ body {
 }
 
 @media (min-width: 680px) {
+  .navbar-expand-md .navbar-collapse {
+    display: -ms-flexbox!important;
+    display: flex!important;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
+}
+
+@media (min-width: 680px) {
   .navbar-expand-md .navbar-toggler {
     display: none;
+  }
+  .regular-nav-width {
+    width: 0%;
   }
 }
 
@@ -146,11 +162,8 @@ body {
   .nav-text {
     display: show !important;
   }
-}
-
-@media (min-width: 681px) {
-  .collapse:not(.show) {
-    display: none !important;
+  .navbar-brand {
+    float: right;
   }
 }
 
@@ -158,15 +171,6 @@ body {
   .nav-text {
     display: none;
   }
-}
-
-.navbar-nav .nav-ank {
-  /* margin-right: 25px;
-  margin-left: 25px; */
-}
-
-.nav-item {
-  /* padding: 20%; */
 }
 
 .navbar-nav {
@@ -197,27 +201,7 @@ body {
   color: DeepSkyBlue;
 }
 
-
-
 /*  HOME PAGE */
-
-/* .firstName {
-  position: relative;
-  /* font-weight: 900; */
-
-/* -webkit-animation-fill-mode: forwards; */
-
-/* } */
-
-*/ .gradient-text {
-  background-color: #f3ec78;
-  background-image: linear-gradient(45deg, #f3ec78, #af4261);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
 
 .text-wrapper {
   font-weight: bold;
@@ -253,20 +237,31 @@ body {
   margin-top: -35px;
 }
 
-.firstName .name-header-expanded {
-  font-size: 5.5em;
+@media (min-width: 500px) {
+  .firstNameText {
+    font-size: 5.2em;
+  }
+  .lastNameText {
+    font-size: 3.7em;
+  }
 }
 
-.lastName .name-header-expanded {
-  font-size: 4em;
+@media (min-width: 575px) and (max-width: 500px) {
+  .firstNameText {
+    font-size: 5.5em;
+  }
+  .lastNameText {
+    font-size: 4em;
+  }
 }
 
-.firstName .name-header-collapsed {
-  font-size: 4.5em;
-}
-
-.lastName .name-header-collapsed {
-  font-size: 3em;
+@media (max-width: 575px) {
+  .firstNameText {
+    font-size: 4.5em;
+  }
+  .lastNameText {
+    font-size: 3em;
+  }
 }
 
 .home-center-page {

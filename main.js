@@ -58,10 +58,10 @@ function checkWindowWidth() {
   }
   // Name size change
   if (windowWidth <= 575) {
-    $('.name-header').removeClass('name-header-expanded').addClass('name-header-collapsed');
+    // $('.name-header').removeClass('name-header-expanded').addClass('name-header-collapsed');
   }
   else {
-    $('.name-header').removeClass('name-header-collapsed').addClass('name-header-expanded');
+    // $('.name-header').removeClass('name-header-collapsed').addClass('name-header-expanded');
   }
 
   // Modal placement change
