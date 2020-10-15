@@ -6,6 +6,7 @@
   <meta name="author" content="Danielle Muhlenberg">
   <meta name="description" content="Portfolio">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,7 +25,7 @@
 
     <nav class="nav navbar navbar-expand-md navbar-light">
       <div id="nav-width" class="regular-nav-width">
-        <a class="navbar-brand mr-1" href="#">
+        <span class="navbar-brand mr-1" href="#">
 
           <!-- <span class="nav-text"> -->
           <span class="custom-control custom-switch custom-switch-md" data-toggle="tooltip" data-placement="right"
@@ -35,7 +36,7 @@
           </span>
           <!-- </span> -->
 
-        </a>
+        </span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,10 +50,10 @@
               <span class="material-icons nav-icons">
                 home
               </span>
-              <span class="nav-text">Home
+              <span class="nav-text">Home</span>
             </a>
           </li>
-          <li class="nav-item" href="#">
+          <li class="nav-item">
             <a id="about" class="nav-link nav-inactive" href="#">
               <span class="material-icons nav-icons">
                 info
@@ -387,7 +388,7 @@
                     </div>
 
                     <div class="row" style="justify-content: center;">
-                      <div id="ghcHackathonContainer" class="img-container">
+                      <div id="wicsBoardContainer" class="img-container">
                         <div class="img-inner">
                           <img src="./images/20192020board.jpg" alt="The WICS Board members from 2019-2020, at UCI."
                             class="center-block d-block w-100"
@@ -577,9 +578,8 @@
                     <div class="row" style="justify-content: center;">
                       <div id="conectarSecondContainer" class="img-container">
                         <div class="img-inner">
-                          <img src="./images/conectarProject.JPG" alt="An example of a project screen from Conectar's site: 
-                          https://sites.google.com/uci.edu/uci-conectar-4th/resources?authuser=0"
-                            class="center-block d-block w-100"
+                          <img src="./images/conectarProject.JPG"
+                            alt="An example of a project screen from Conectar's site" class="center-block d-block w-100"
                             style="margin: auto; width: 60% !important; height: auto">
                         </div>
                       </div>
@@ -615,16 +615,14 @@
 
                   <div class="row">
                     <a style="margin-top: 10px;" class="project-links links-light"
-                      href="http://education.uci.edu/ucisoe_news/nsf_grant_computation_thinking"
-                      re=" noopener noreferrer" target="_blank">
+                      href="http://education.uci.edu/ucisoe_news/nsf_grant_computation_thinking" target="_blank">
                       <em class="material-icons" style="vertical-align: middle;">article</em>
                       Interested in CONECTAR? Learn more here</a>
                   </div>
                   <div class="row">
 
                     <a style="margin-top: 10px;" class="project-links links-light"
-                      href="https://sites.google.com/uci.edu/uci-conectar-4th/level-1-curriculum-2-0"
-                      re=" noopener noreferrer" target="_blank">
+                      href="https://sites.google.com/uci.edu/uci-conectar-4th/level-1-curriculum-2-0" target="_blank">
                       <em class="material-icons" style="vertical-align: middle;">article</em>
                       CONECTAR curriculum</a>
                   </div>
@@ -703,12 +701,19 @@
                     <div class="row" style="justify-content: center;">
                       <div id="sanaContainer" class="img-container">
                         <div class="img-inner">
-                          <img src="./images/sanaChart.png" alt="A graph from a SANA article: https://www.semanticscholar.org/paper/SANA-%3A-Simulated-Annealing-
-                        far-outperforms-many-%3A-Mamano-Hayes/557669ea9cf8ec36f66bbecfed395c9814e9772d/figure/4."
+                          <img src="./images/sanaChart.png" alt="A graph showing SANA is faster than other algorithms."
                             class="center-block d-block w-100"
                             style="margin: auto; width: 70% !important; height: auto">
                         </div>
                       </div>
+                    </div>
+
+                    <div class="row" style="justify-content: center; margin-top: 2px; font-style: italic;">
+                      <a class="project-links links-light"
+                        href="https://www.semanticscholar.org/paper/SANA-%3A-Simulated-Annealing-far-outperforms-many-%3A-Mamano-Hayes/557669ea9cf8ec36f66bbecfed395c9814e9772d"
+                        re="noopener noreferrer" target="_blank">
+                        <small>Source</small>
+                      </a>
                     </div>
 
                   </div>
@@ -731,7 +736,7 @@
 
                   <div class="row">
                     <a style="margin-top: 10px;" class="project-links links-light"
-                      href="https://github.com/nmamano/SANA" re=" noopener noreferrer" target="_blank">
+                      href="https://github.com/nmamano/SANA" target="_blank">
                       <em class="icon-github" style="vertical-align: middle; margin-left: 5px; margin-right: 2px;"></em>
                       View the repo
                     </a>
@@ -811,19 +816,26 @@
 
 
                   <div class="row" style="justify-content: center;">
-                    <div id="sanaSecondContainer" class="img-container">
+                    <div id="securityContainer" class="img-container">
                       <div class="img-inner">
-                        <img src="./images/security.png"
-                          alt="An OWASP security risk chart from https://www.question-defense.com/2019/10/07/what-are-the-owasp-top-10-vulnerabilities."
+                        <img src="./images/security.png" alt="An OWASP security risk chart."
                           class="center-block d-block w-100" style="margin: auto; width: 70% !important; height: auto">
                       </div>
                     </div>
                   </div>
 
+                  <div class="row" style="justify-content: center; margin-top: 2px; font-style: italic;">
+                    <a class="project-links links-light"
+                      href="https://www.question-defense.com/2019/10/07/what-are-the-owasp-top-10-vulnerabilities"
+                      re="noopener noreferrer" target="_blank">
+                      <small>Source</small>
+                    </a>
+                  </div>
+
                   <div class="row">
                     <a style="margin-top: 10px;" class="project-links links-light"
                       href="https://www.informatics.uci.edu/educating-the-next-generation-about-cybersecurity/"
-                      re=" noopener noreferrer" target="_blank">
+                      target="_blank">
                       <em class="material-icons" style="vertical-align: middle;">article</em>
                       Learn more about Ziv's research</a>
                   </div>
@@ -1222,13 +1234,6 @@
                   </div>
                 </div>
 
-                <!-- Main Image -->
-                <!-- <div class="row">
-                  <img src="./images/icsSearchMondego.gif" class="card-img-top"
-                    style="margin: auto; width: 80% !important;"
-                    alt="A demo of searching 'Mondego' on the Search Engine UI">
-                </div> -->
-
                 <div class="row">
                   <div id="searchEngineContainer" class="img-container">
                     <div class="img-inner">
@@ -1245,7 +1250,7 @@
 
 
           <!-- Scheduley -->
-          <div id="Scheduley" class="card">
+          <div id="ScheduleyCard" class="card">
             <div class="card-body">
 
               <!-- Title -->
@@ -1316,8 +1321,10 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <span class="caption-text text-color-light">
-                        Scroll through some sample code from this project.
+                      <span class="caption-text text-color-light" style="font-style: italic;">
+                        <small>
+                          Scroll through some sample code from this project.
+                        </small>
                       </span>
                     </div>
                   </div>
@@ -1330,7 +1337,6 @@
         </div>
       </div>
 
-
       <!-- Resume Container -->
       <div id="resumeCollapse" class="collapse">
         <div>
@@ -1339,7 +1345,7 @@
           <div class="download-and-resume-container body-text">
 
             <span class="downloadPdf">
-              <a href="/files/Muhlenberg_Danielle_Resume.pdf" class="download-link-and-icon"
+              <a href="./files/Muhlenberg_Danielle_Resume.pdf" class="download-link-and-icon"
                 download="muhlenberg_danielle_resume.pdf">
                 Download
                 <span class="material-icons download-icon"
@@ -1373,17 +1379,16 @@
       <!-- CONTACT PAGE -->
       <div id="contactCollapse" class="collapse">
         <div style="margin-bottom: 20px;">
-          <div>
-            <h1 class="page-header">Say Hello!
-            </h1>
-          </div>
-
+          <h1 class="page-header">Say Hello!
+          </h1>
           <div>
 
             <iframe id="contactForm" onload="window.parent.scrollTo(0,0)"
+              style="display:block; margin:auto; margin-top:15px; width:100%; border:0;"
               src="https://docs.google.com/forms/d/e/1FAIpQLSf17As2hNBK6_CYhWgVNFNS5Hb0XGSrbPbWutgtgmdvw_LZ1Q/viewform?embedded=true"
-              width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
-              scrolling="no">Loading…</iframe>
+              height=900>
+            </iframe>
+
           </div>
         </div>
       </div>

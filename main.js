@@ -61,7 +61,6 @@ function checkWindowWidth() {
     $('.modal-dialog').removeClass('modal-collapsed').addClass('modal-expanded');
     $('.clickHere').html("Click For More Info");
     $('.memorable').html("Memorable Accomplishments");
-    document.getElementById("contactForm").height = "200";
     $('.downloadPdf').addClass('none');
     $('.downloadLink').removeClass('none');
     $('.virtualHelpImages').addClass('none');
@@ -70,7 +69,6 @@ function checkWindowWidth() {
     $('.modal-dialog').removeClass('modal-expanded').addClass('modal-collapsed');
     $('.clickHere').html("Click Here For Additional Info / Images")
     $('.memorable').html("My Memorable Accomplishments On This Project");
-    document.getElementById("contactForm").height = "900";
     $('.downloadPdf').removeClass('none');
     $('.downloadLink').addClass('none');
     $('.virtualHelpImages').removeClass('none');
