@@ -64,6 +64,7 @@ function checkWindowWidth() {
     $('.downloadPdf').addClass('none');
     $('.downloadLink').removeClass('none');
     $('.virtualHelpImages').addClass('none');
+    $("iframe").height(1200);
   }
   else {
     $('.modal-dialog').removeClass('modal-expanded').addClass('modal-collapsed');
@@ -72,6 +73,7 @@ function checkWindowWidth() {
     $('.downloadPdf').removeClass('none');
     $('.downloadLink').addClass('none');
     $('.virtualHelpImages').removeClass('none');
+    $("iframe").height(900);
   }
 }
 
@@ -88,6 +90,7 @@ function lightModeSettings() {
   $('.caption-text').removeClass('text-color-dark').addClass('text-color-light');
   $('.navbar').addClass('navbar-light').removeClass('navbar-dark');
   $('.close').removeClass('close-dark');
+
 }
 
 function darkModeSettings() {

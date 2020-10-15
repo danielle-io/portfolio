@@ -139,14 +139,6 @@ body {
   margin-top: 24px;
 }
 
-/* Mobile */
-
-/* @media (max-width: 500px) {
-  .desktopOnly {
-    display: none;
-  }
-} */
-
 @media (max-width: 680px) {
   .nav {
     display: inline-block !important;
@@ -701,6 +693,13 @@ li.project-details-list span {
 }
 
 /* CONTACT PAGE */
+
+@media (min-width: 500px) {
+  form {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
 
 @media (min-width: 500px) {
   form {
