@@ -4,7 +4,7 @@ html, body {
   height: 100%;
 }
 
-html, body { width:100%;  overflow:hidden; }
+html, body { width:100%;  overflow-x:hidden; }
 
 #pageBackgroundColor {
   min-height: 100%;
@@ -241,10 +241,12 @@ body {
   .lastNameText {
     font-size: 2.7em;
   }
+  .lastName {
+    margin-top: -9px !important;
+  }
 }
 
 /* Small Browser Window */
-
 @media (min-width: 501px) and (max-width: 575px) {
   .firstNameText {
     font-size: 4.5em;
