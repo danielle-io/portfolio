@@ -121,13 +121,18 @@ body {
 /* Nav Drawer Styling for Mobile */
 
 .navbar-toggler collapsed {
-  margin-top: 18px;
+  margin-top: 24px;
 }
 
 @media (max-width: 680px) {
   .nav {
     display: inline-block !important;
-    /* justify-content: flex-start !important; */
+  }
+  .nav-text {
+    display: show !important;
+  }
+  .navbar-brand {
+    float: right;
   }
 }
 
@@ -147,23 +152,11 @@ body {
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
-}
-
-@media (min-width: 680px) {
   .navbar-expand-md .navbar-toggler {
     display: none;
   }
   .regular-nav-width {
     width: 0%;
-  }
-}
-
-@media (max-width: 680px) {
-  .nav-text {
-    display: show !important;
-  }
-  .navbar-brand {
-    float: right;
   }
 }
 
@@ -202,7 +195,6 @@ body {
 }
 
 /*  HOME PAGE */
-
 .text-wrapper {
   font-weight: bold;
   position: relative;
@@ -237,30 +229,33 @@ body {
   margin-top: -35px;
 }
 
-@media (min-width: 500px) {
+/* Mobile */
+@media (max-width: 500px) {
   .firstNameText {
-    font-size: 5.2em;
+    font-size: 3.3em;
   }
   .lastNameText {
-    font-size: 3.7em;
+    font-size: 2.7em;
   }
 }
 
-@media (min-width: 575px) and (max-width: 500px) {
-  .firstNameText {
-    font-size: 5.5em;
-  }
-  .lastNameText {
-    font-size: 4em;
-  }
-}
-
-@media (max-width: 575px) {
+/* Small Browser Window */
+@media (min-width: 501px) and (max-width: 575px) {
   .firstNameText {
     font-size: 4.5em;
   }
   .lastNameText {
     font-size: 3em;
+  }
+}
+
+/* Full Screen */
+@media (min-width: 576px) {
+  .firstNameText {
+    font-size: 5.5em;
+  }
+  .lastNameText {
+    font-size: 4em;
   }
 }
 

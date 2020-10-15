@@ -56,13 +56,6 @@ function checkWindowWidth() {
   else {
     document.getElementById('toggleLabel').innerHTML = "Toggle Dark Mode";
   }
-  // Name size change
-  if (windowWidth <= 575) {
-    // $('.name-header').removeClass('name-header-expanded').addClass('name-header-collapsed');
-  }
-  else {
-    // $('.name-header').removeClass('name-header-collapsed').addClass('name-header-expanded');
-  }
 
   // Modal placement change
   if (windowWidth <= 500) {
@@ -118,6 +111,7 @@ $(window).resize(function () {
         $('.project-links').removeClass('links-light').addClass('links-dark');
         $('.download-link-and-icon').removeClass('links-light').addClass('links-dark');
         $('.caption-text').removeClass('text-color-light').addClass('text-color-dark');
+        $('.navbar').addClass('navbar-dark').removeClass('navbar-light');
         $('.close').addClass('close-dark');
       }
       // Light Mode Settings
@@ -133,6 +127,7 @@ $(window).resize(function () {
         $('.project-links').removeClass('links-dark').addClass('links-light');
         $('.download-link-and-icon').removeClass('links-dark').addClass('links-light');
         $('.caption-text').removeClass('text-color-dark').addClass('text-color-light');
+        $('.navbar').addClass('navbar-light').removeClass('navbar-dark');
         $('.close').removeClass('close-dark');
       }
     });
