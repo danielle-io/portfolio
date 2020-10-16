@@ -502,7 +502,7 @@ li.project-details-list::before {
   height: 100%;
   transform-style: preserve-3d;
   transform-origin: center right;
-  transition: transform .5s;
+  transition: transform .7s;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
 }
 
@@ -608,6 +608,17 @@ li.project-details-list::before {
   border-width: 1px;
 }
 
+/* Mobile */
+
+@media (max-width: 500px) {
+  .button {
+    font-size: .10px !important;
+  }
+  .btn-group-sm>.btn, .btn-sm {
+    font-size: .75rem !important;
+  }
+}
+
 .btn-info-light {
   border-color: #17a2b8;
   background-color: white !important;
@@ -704,6 +715,15 @@ li.project-details-list span {
   max-width: 100%;
   max-height: 270px;
   margin-left: 106px;
+}
+
+@media (max-width: 500px) {
+  .inner-code {
+    font-size: 8px;
+  }
+  .inner-code-dark {
+    font-size: 8px;
+  }
 }
 
 /* RESUME PAGE */
