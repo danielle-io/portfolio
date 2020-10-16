@@ -534,6 +534,10 @@ li.project-details-list::before {
   direction: ltr;
 }
 
+.card-icons-dash-dark-mode {
+  color: #e5b8b8  !important;
+}
+
 .project-text {
   font-family: 'Lato', sans-serif;
   font-size: 1em;

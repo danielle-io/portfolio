@@ -90,7 +90,7 @@ function lightModeSettings() {
   $('.caption-text').removeClass('text-color-dark').addClass('text-color-light');
   $('.navbar').addClass('navbar-light').removeClass('navbar-dark');
   $('.close').removeClass('close-dark');
-
+  $('.card-icons-dash').removeClass('card-icons-dash-dark-mode');
 }
 
 function darkModeSettings() {
@@ -106,6 +106,7 @@ function darkModeSettings() {
   $('.caption-text').removeClass('text-color-light').addClass('text-color-dark');
   $('.navbar').addClass('navbar-dark').removeClass('navbar-light');
   $('.close').addClass('close-dark');
+  $('.card-icons-dash').addClass('card-icons-dash-dark-mode');
 }
 
 // Modify elements to window width on load
@@ -141,13 +142,13 @@ $(window).resize(function () {
       $('.card-face card-face--back hide-element').css('animation', 'none');
 
 
-      
+
       var element = document.getElementById(this.id);
       element.classList.toggle("is-flipped");
 
       $('#' + this.id + 'Front').toggle('hide-element');
       $('#' + this.id + 'Back').toggle('hide-element');
-      setTimeout(() => {  console.log("oui") }, 1000);
+      setTimeout(() => { console.log("oui") }, 1000);
     });
 
     $('.project-modal-link').on('click', function (event) {
