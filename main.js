@@ -141,14 +141,15 @@ $(window).resize(function () {
       $('.card-face card-face--front').css('animation', 'none');
       $('.card-face card-face--back hide-element').css('animation', 'none');
 
-
-
       var element = document.getElementById(this.id);
       element.classList.toggle("is-flipped");
 
       $('#' + this.id + 'Front').toggle('hide-element');
       $('#' + this.id + 'Back').toggle('hide-element');
-      setTimeout(() => { console.log("oui") }, 1000);
+
+      // Scroll to top of card on click
+      var element = $('#' + this.id);
+      $('html, body').scrollTop(element.offset().top - 200);
     });
 
     $('.project-modal-link').on('click', function (event) {
