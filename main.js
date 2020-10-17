@@ -1,43 +1,3 @@
-// Animation
-// Wraps each letter in its own span
-var textWrapper = document.querySelector('.firstName .name-header');
-var textWrapperTwo = document.querySelector('.lastName .name-header');
-var textWrapperThree = document.querySelector('.social-link-icons');
-
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-textWrapperTwo.innerHTML = textWrapperTwo.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-textWrapperThree.innerHTML = textWrapperThree.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({ loop: false })
-  .add({
-    targets: '.firstName .letter',
-    translateY: ["1.1em", 0],
-    translateX: ["0.55em", 0],
-    translateZ: 0,
-    rotateZ: [180, 0],
-    easing: "easeInOutSine",
-    delay: (el, i) => 50 * i
-  }).add({
-    targets: '.lastName .letter',
-    translateY: ["1.1em", 0],
-    translateX: ["0.55em", 0],
-    translateZ: 0,
-    rotateZ: [180, 0],
-    duration: 500,
-    easing: "easeInOutSine",
-    delay: (el, i) => 50 * i
-  }).add({
-    opacity: 1,
-    targets: '.social-link-icons',
-    translateY: ["1.1em", 0],
-    translateX: ["0.55em", 0],
-    translateZ: 0,
-    rotateZ: [180, 0],
-    duration: 750,
-    easing: "easeInOutSine",
-  });
-
-
 // Load code from data file
 scheduleyCode = projectData.Scheduley.code;
 
@@ -79,7 +39,11 @@ function checkWindowWidth() {
 
 function lightModeSettings() {
   document.getElementById('pageBackgroundColor').className = "light-mode";
+  $('.first-name').removeClass('first-name-dark').addClass('first-name-light');
+  $('.last-name').removeClass('last-name-dark').addClass('last-name-light');
+  $('.swe-text').removeClass('swe-text-dark').addClass('swe-text-light');
   $('.card').removeClass('background-dark').addClass('background-light');
+  $('.fixed-header').removeClass('background-dark').addClass('background-light');
   $('.project-text').removeClass('text-color-dark').addClass('text-color-light');
   $('.btn-info').removeClass('btn-info-dark').addClass('btn-info-light');
   $('.modal-content').removeClass('background-dark').addClass('background-light');
@@ -87,6 +51,7 @@ function lightModeSettings() {
   $('.custom-control-label').removeClass('text-color-dark-modified').addClass('text-color-light-modified');
   $('.project-links').removeClass('links-dark').addClass('links-light');
   $('.caption-text').removeClass('text-color-dark').addClass('text-color-light');
+  $('.mdl-button').removeClass('mdl-button-dark').addClass('mdl-button-light');
   $('.navbar').addClass('navbar-light').removeClass('navbar-dark');
   $('.close').removeClass('close-dark');
   $('.card-icons-dash').removeClass('card-icons-dash-dark-mode');
@@ -94,7 +59,11 @@ function lightModeSettings() {
 
 function darkModeSettings() {
   document.getElementById('pageBackgroundColor').className = "dark-mode";
+  $('.first-name').removeClass('first-name-light').addClass('first-name-dark');
+  $('.last-name').removeClass('last-name-light').addClass('last-name-dark');
+  $('.swe-text').removeClass('swe-text-light').addClass('swe-text-dark');
   $('.card').removeClass('background-light').addClass('background-dark');
+  $('.fixed-header').removeClass('background-light').addClass('background-dark');
   $('.project-text').removeClass('text-color-light').addClass('text-color-dark');
   $('.btn-info').removeClass('btn-info-light').addClass('btn-info-dark');
   $('.modal-content').removeClass('background-light').addClass('background-dark');
@@ -103,6 +72,7 @@ function darkModeSettings() {
   $('.project-links').removeClass('links-light').addClass('links-dark');
   $('.caption-text').removeClass('text-color-light').addClass('text-color-dark');
   $('.navbar').addClass('navbar-dark').removeClass('navbar-light');
+  $('.mdl-button').removeClass('mdl-button-light').addClass('mdl-button-dark');
   $('.close').addClass('close-dark');
   $('.card-icons-dash').addClass('card-icons-dash-dark-mode');
 }
@@ -128,10 +98,58 @@ $(window).resize(function () {
       if (!$('#' + this.id).hasClass("nav-active")) {
         removeActiveFromNavItems('#' + this.id);
         collapseAndExpandContainers('#' + this.id);
+        if (this.id === "projects") {
+          $('#second-nav').removeClass('none');
+        }
+        else {
+          $('#second-nav').addClass('none');
+        }
       }
       else {
         $('html, body').animate({ scrollTop: 0 }, 'fast');
       }
+    });
+
+    $('.name-container').on('click', function (event) {
+      if ($('#firstName').hasClass('flash-color')) {
+        $('#firstName').removeClass('flash-color');
+        $('#lastName').removeClass('flash-color');
+      }
+      else {
+        $('#firstName').addClass('flash-color');
+        $('#lastName').addClass('flash-color');
+      }
+
+
+      // setTimeout(function () {
+      //   $('#firstName').removeClass('flash-color');
+      //   $('#lastName').removeClass('flash-color');
+      // }, 3000);
+
+      // if ($('#firstName').hasClass("first-name-light")) {
+      //   removeActiveFromNavItems('#' + this.id);
+      //   collapseAndExpandContainers('#' + this.id);
+      //   if (this.id === "projects") {
+      //     $('#firstName').addClass('none');
+      //   }
+      //   else {
+      //     $('#second-nav').addClass('none');
+      //   }
+      // }
+      // else {
+      //   $('html, body').animate({ scrollTop: 0 }, 'fast');
+      // }
+    });
+
+
+
+    $('.mdl-button').on('click', function (event) {
+      console.log(this.id);
+      var element = document.getElementById(this.id);
+
+      // Scroll to top of card on click
+      var element = $('#' + this.id + "Card");
+      $('html, body').animate({ scrollTop: $(element).offset().top - 200 }, 'slow');
     });
 
     $('.card-flip').on('click', function (event) {
@@ -230,7 +248,13 @@ $(window).resize(function () {
 
   function collapseAndExpandContainers(itemName) {
     $('.collapse').collapse('hide', true);
-    $(itemName + "Collapse").collapse('show', true);
+    if (itemName !== "#projects") {
+      $(itemName + "Collapse").collapse('show', true);
+      $('#projectsCollapse').addClass('none');
+    }
+    else {
+      $('#projectsCollapse').removeClass('none');
+    }
     $('html, body').animate({ scrollTop: 0 }, 'fast');
   }
 
