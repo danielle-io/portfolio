@@ -198,7 +198,7 @@ $(window).resize(function () {
     $('#code').addClass('inner-code');
 
     switch (containerName) {
-      case "PengWin":
+      case "pengWin":
         titleText = "PengWin";
         descriptionText = projectData.PengWin.descriptionText;
         accomplishmentsText = projectData.PengWin.accomplishmentsText;
@@ -239,6 +239,7 @@ $(window).resize(function () {
         descriptionText = "";
         break;
     }
+    console.log(containerName);
     document.getElementById('titleText').innerHTML = titleText;
     document.getElementById('descriptionText').innerHTML = descriptionText;
     document.getElementById('accomplishmentsText').innerHTML = accomplishmentsText;

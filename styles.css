@@ -720,6 +720,7 @@ button:focus {
 }
 
 .page-body-bckg-light {
+  z-index: 2;
   background-image: linear-gradient(120deg, rgba(255, 250, 250, 0.274) 0%, rgba(219, 229, 236, 0.404) 100%);
 }
 
