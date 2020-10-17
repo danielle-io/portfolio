@@ -253,6 +253,15 @@ body {
   margin-top: 30px;
 }
 
+.first-name-no-js {
+  margin-top: 10px;
+}
+
+.last-name-no-js {
+  margin-top: 10px;
+}
+
+
 .first-name-light {
   color: rgb(194, 51, 105);
   -webkit-animation: slide-bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s both, color-change-light 4s;
@@ -385,6 +394,11 @@ body {
   text-align: center;
 }
 
+.home-center-page-no-js {
+  padding: 50px 0;
+  text-align: center;
+}
+
 .home-page {
   padding: 70px 0;
   text-align: center;
@@ -398,6 +412,17 @@ body {
   vertical-align: middle;
   line-height: 100%;
   margin: auto;
+}
+
+.social-links-no-js{
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  vertical-align: middle;
+  line-height: 100%;
+  margin: auto;
+  margin-top: 108px;
 }
 
 /* Mobile */
