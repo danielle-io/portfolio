@@ -819,6 +819,8 @@ li.project-details-list::before {
   font-size: 14px !important;
 }
 
+
+
 .modal-dialog {
   min-width: 60%;
 }
@@ -830,6 +832,11 @@ li.project-details-list::before {
     max-width: 80% !important;
     margin-top: 60px !important;
     margin-bottom: 30px !important;
+  }
+  li.project-details-list::before {
+    content: "• ";
+    color: inherit !important;
+    font-size: 10px !important;
   }
 }
 
