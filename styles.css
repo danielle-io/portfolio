@@ -1129,29 +1129,31 @@ li.project-details-list span {
 @media (max-width: 500px) {
   .inner-code {
     font-size: 8px;
-    max-height: 218px;
-  }
+    max-height: 147px;
+    margin-left: 69px;
+    margin-top: -28px;
+    }
   .inner-code-dark {
     font-size: 8px;
-    max-height: 204px;
+    max-height: 148px;
     margin-left: 77px;
   }
   .search-engine-code {
-    width: 361px;
+    width: 261px;
     background: #fff url('./images/pyCharmSearchEngine.png') no-repeat top left;
     background-size: 100% auto;
   }
   .inner-code-dark-one {
     color: rgb(56, 50, 50);
     font-size: 8px;
-    max-height: 187px;
-    margin-left: 102px;
+    max-height: 119px;
+    margin-left: 75px;
   }
   .scheduley-code {
-    width: 371px;
+    width: 291px;
   }
   .jane-code {
-    width: 416px;
+    width: 261px;
   }
   .search-engine-gif {
     margin: auto;
