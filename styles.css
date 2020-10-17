@@ -792,12 +792,10 @@ li.project-details-list::before {
 /* Mobile */
 
 @media (max-width: 500px) {
-  .modal-dialog {
-    /* max-width: 60%; */
-    margin-top: 30px !important;
+  .modal-content {
+    max-width: 80%;
+    margin-top: 60px !important;
     margin-bottom: 30px !important;
-    margin-left: 20px !important;
-    margin-right: 20px !important;
   }
 }
 
