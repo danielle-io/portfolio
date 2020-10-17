@@ -79,7 +79,7 @@ body {
   color: #61969e;
   font-family: 'Poppins', sans-serif;
   font-size: 1em;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 @media (max-width: 500px) {
@@ -152,6 +152,12 @@ body {
   }
   .navbar-brand {
     float: right;
+  }
+  .nav {
+    /* width: 30% !important; */
+    /* margin: 0;
+    padding: 0;
+    background-color: transparent; */
   }
 }
 
@@ -394,6 +400,7 @@ body {
 }
 
 /* Mobile */
+
 @media (max-width: 500px) {
   .social-links {
     font-size: 2.8em;
@@ -462,32 +469,60 @@ body {
 }
 
 .card-flip {
+  perspective: 800;
+  -moz-perspective: 800;
+  -webkit-perspective: 800;
+  margin: 1em auto;
+  width: 80%;
+  border: solid 1em white;
+  border-radius: 0.5em;
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: 0.7s;
+  -moz-transition: 0.7s;
+  -webkit-transition: 0.7s;
   cursor: pointer;
 }
 
-.card.is-flipped {
-  transform: translateX(-100%) rotateY(-180deg);
+.card-flip.background-light:hover {
+  box-shadow: 0 0 1em rgb(145, 140, 140) !important;
 }
 
-.card-face {
-  height: 100% !important;
-  -webkit-backface-visibility: hidden;
+.card-flip.background-dark:hover {
+  box-shadow: 0 0 1em rgb(64, 83, 110) !important;
+}
+
+.card-flip.flipped {
+  transform: rotatey(-180deg);
+  -moz-transform: rotatey(-180deg);
+  -webkit-transform: rotatey(-180deg);
+}
+
+.card-flip .face {
+  padding: 1em;
   backface-visibility: hidden;
-  z-index: 2;
-  /* for firefox 31 */
-  transform: rotateY(0deg);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.card-face.hide-element {
+.card-flip .front {
+  display: block;
+}
+
+.card-flip.flipped .front {
   display: none;
 }
 
-.card-face--front {
-  transform: rotateY(0deg);
+.card-flip .back {
+  transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  display: none;
 }
 
-.card-face--back {
-  transform: rotateY(180deg);
+.card-flip.flipped .back {
+  display: block;
 }
 
 /* PROJECTS PAGE*/
@@ -608,35 +643,6 @@ body {
 
 /* Projects */
 
-/* @-webkit-keyframes scale-up-left {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    -webkit-transform-origin: 0% 50%;
-            transform-origin: 0% 50%;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: 0% 50%;
-            transform-origin: 0% 50%;
-  }
-}
-@keyframes scale-up-left {
-  0% {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-    -webkit-transform-origin: 0% 50%;
-            transform-origin: 0% 50%;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: 0% 50%;
-            transform-origin: 0% 50%;
-  }
-} */
-
 @-webkit-keyframes scale-in-hor-left {
   0% {
     -webkit-transform: scaleX(0);
@@ -709,6 +715,14 @@ button:focus {
   padding-top: 12px;
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.page-body-bckg-light {
+  background-image: linear-gradient(120deg, rgba(255, 250, 250, 0.274) 0%, rgba(219, 229, 236, 0.404) 100%);
+}
+
+.page-body-bckg-dark {
+  /* background-image: linear-gradient(120deg, rgba(255, 250, 250, 0.274) 0%, rgba(219, 229, 236, 0.404) 100%); */
 }
 
 .card-columns {
@@ -787,10 +801,7 @@ li.project-details-list::before {
   margin-bottom: 30px !important;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transform-origin: center right;
-  transition: transform .7s;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
+  box-shadow: 0 10px 20px rgba(71, 69, 69, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
 }
 
 .background-dark {
@@ -987,6 +998,12 @@ li.project-details-list span {
   background-size: 100% auto;
 }
 
+.search-engine-code {
+  width: 500px;
+  background: #fff url('./images/pyCharmSearchEngine.png') no-repeat top left;
+  background-size: 100% auto;
+}
+
 .inner-code {
   overflow-y: scroll;
   color: white;
@@ -1005,12 +1022,85 @@ li.project-details-list span {
   margin-left: 106px;
 }
 
-@media (max-width: 500px) {
-  .inner-code {
-    font-size: 8px;
+.search-engine-gif {
+  margin: auto;
+  width: 80%;
+  height: auto
+}
+
+.inner-code-dark-one {
+  overflow-y: scroll;
+  color: rgb(56, 50, 50);
+  font-size: 11px;
+  max-width: 100%;
+  max-height: 270px;
+  margin-left: 140px;
+}
+
+/* Resized Screen */
+
+@media (min-width: 983px) and (max-width: 1350px) {
+  .scheduley-code {
+    width: 387px;
   }
   .inner-code-dark {
     font-size: 8px;
+    max-height: 204px;
+  }
+  .search-engine-code {
+    width: 406px;
+  }
+  .inner-code-dark-one {
+    font-size: 8px;
+    max-height: 215px;
+  }
+}
+
+/* Resized Screen (Smaller) */
+
+@media (min-width: 501px) and (max-width: 551px) {
+  .scheduley-code {
+    width: 379px;
+  }
+  .inner-code-dark {
+    font-size: 8px;
+    max-height: 210px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .inner-code {
+    font-size: 8px;
+    max-height: 218px;
+  }
+  .inner-code-dark {
+    font-size: 8px;
+    max-height: 204px;
+    margin-left: 77px;
+  }
+  .search-engine-code {
+    width: 361px;
+    background: #fff url('./images/pyCharmSearchEngine.png') no-repeat top left;
+    background-size: 100% auto;
+  }
+  .inner-code-dark-one {
+    color: rgb(56, 50, 50);
+    font-size: 8px;
+    max-height: 187px;
+    margin-left: 102px;
+  }
+  .scheduley-code {
+    width: 371px;
+  }
+  .jane-code {
+    width: 416px;
+  }
+  .search-engine-gif {
+    margin: auto;
+    width: 70% !important;
+    height: auto
   }
 }
 
@@ -1039,7 +1129,19 @@ li.project-details-list span {
 
 @media (max-width: 500px) {
   .resume-image {
-    width: 90% !important;
+    width: 90%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .resume-image {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1065px) {
+  .resume-image {
+    width: 85%;
   }
 }
 

@@ -1,9 +1,9 @@
 // Load code from data file
 scheduleyCode = projectData.Scheduley.code;
+searchEngineCode = projectData.ICSSearchEngine.code;
 
-document.getElementById('code-front').innerHTML = scheduleyCode;
-document.getElementById('code-background-image-front').className = "scheduley-code";
-
+document.getElementById('code-scheduley').innerHTML = scheduleyCode;
+document.getElementById('code-search-engine').innerHTML = searchEngineCode;
 var $window = $(window);
 
 function checkWindowWidth() {
@@ -53,6 +53,7 @@ function lightModeSettings() {
   $('.caption-text').removeClass('text-color-dark').addClass('text-color-light');
   $('.mdl-button').removeClass('mdl-button-dark').addClass('mdl-button-light');
   $('.navbar').addClass('navbar-light').removeClass('navbar-dark');
+  $('#pageBody').removeClass('page-body-bckg-dark').addClass('page-body-bckg-light');
   $('.close').removeClass('close-dark');
   $('.card-icons-dash').removeClass('card-icons-dash-dark-mode');
 }
@@ -72,6 +73,7 @@ function darkModeSettings() {
   $('.project-links').removeClass('links-light').addClass('links-dark');
   $('.caption-text').removeClass('text-color-light').addClass('text-color-dark');
   $('.navbar').addClass('navbar-dark').removeClass('navbar-light');
+  $('#pageBody').removeClass('page-body-bckg-light').addClass('page-body-bckg-dark');
   $('.mdl-button').removeClass('mdl-button-light').addClass('mdl-button-dark');
   $('.close').addClass('close-dark');
   $('.card-icons-dash').addClass('card-icons-dash-dark-mode');
@@ -80,6 +82,9 @@ function darkModeSettings() {
 // Modify elements to window width on load
 $(document).ready(function () {
   checkWindowWidth();
+  $('html, body').animate({ scrollTop: 0 }, 'fast');
+  $('#pageBody').removeClass('page-body-bckg-light');
+  $('#pageBody').removeClass('page-body-bckg-dark');
   if ($(darkModeSwitch).prop("checked")) {
     darkModeSettings();
   }
@@ -98,11 +103,30 @@ $(window).resize(function () {
       if (!$('#' + this.id).hasClass("nav-active")) {
         removeActiveFromNavItems('#' + this.id);
         collapseAndExpandContainers('#' + this.id);
-        if (this.id === "projects") {
+        
+        if (this.id === "projects" || this.id === "about") {
           $('#second-nav').removeClass('none');
+          if ($(darkModeSwitch).prop("checked")) {
+            $('#pageBody').addClass('page-body-bckg-dark');
+          }
+          else{
+            $('#pageBody').addClass('page-body-bckg-light');
+          }
+          if (this.id === "about"){
+            $('.project-buttons').addClass('none');
+            $('.about-buttons').removeClass('none');
+          }
+          else {
+            $('.about-buttons').addClass('none');
+            $('.project-buttons').removeClass('none');
+          }
         }
         else {
           $('#second-nav').addClass('none');
+          $('.project-buttons').addClass('none');
+          $('.about-buttons').addClass('none');
+          $('#pageBody').removeClass('page-body-bckg-light');
+          $('#pageBody').removeClass('page-body-bckg-dark');
         }
       }
       else {
@@ -119,54 +143,43 @@ $(window).resize(function () {
         $('#firstName').addClass('flash-color');
         $('#lastName').addClass('flash-color');
       }
-
-
-      // setTimeout(function () {
-      //   $('#firstName').removeClass('flash-color');
-      //   $('#lastName').removeClass('flash-color');
-      // }, 3000);
-
-      // if ($('#firstName').hasClass("first-name-light")) {
-      //   removeActiveFromNavItems('#' + this.id);
-      //   collapseAndExpandContainers('#' + this.id);
-      //   if (this.id === "projects") {
-      //     $('#firstName').addClass('none');
-      //   }
-      //   else {
-      //     $('#second-nav').addClass('none');
-      //   }
-      // }
-      // else {
-      //   $('html, body').animate({ scrollTop: 0 }, 'fast');
-      // }
     });
-
 
 
     $('.mdl-button').on('click', function (event) {
       console.log(this.id);
       var element = document.getElementById(this.id);
 
-      // Scroll to top of card on click
-      var element = $('#' + this.id + "Card");
+      var trimmedId = this.id .slice(0, -1) 
+
+      var element = $('#' + trimmedId + "Card");
       $('html, body').animate({ scrollTop: $(element).offset().top - 200 }, 'slow');
     });
 
-    $('.card-flip').on('click', function (event) {
+    $('.card-flip').click(function (e) {
+      var $card = $(this);
+      if ($card.hasClass("flipped")) {
+          $card.removeClass('flipped');
+      } else {
+          $card.addClass('flipped');
+      }
+  });
 
-      $('.card-face card-face--front').css('animation', 'none');
-      $('.card-face card-face--back hide-element').css('animation', 'none');
+    // $('.card-flip').on('click', function (event) {
 
-      var element = document.getElementById(this.id);
-      element.classList.toggle("is-flipped");
+    //   $('.card-face card-face--front').css('animation', 'none');
+    //   $('.card-face card-face--back hide-element').css('animation', 'none');
 
-      $('#' + this.id + 'Front').toggle('hide-element');
-      $('#' + this.id + 'Back').toggle('hide-element');
+    //   var element = document.getElementById(this.id);
+    //   element.classList.toggle("is-flipped");
 
-      // Scroll to top of card on click
-      var element = $('#' + this.id);
-      $('html, body').scrollTop(element.offset().top - 200);
-    });
+    //   $('#' + this.id + 'Front').toggle('hide-element');
+    //   $('#' + this.id + 'Back').toggle('hide-element');
+
+    //   // Scroll to top of card on click
+    //   var element = $('#' + this.id);
+    //   $('html, body').scrollTop(element.offset().top - 200);
+    // });
 
     $('.project-modal-link').on('click', function (event) {
       getProjectModalText(event.target.id);
@@ -190,6 +203,9 @@ $(window).resize(function () {
     var code = "";
     var sampleCodeText = "";
     document.getElementById('code-background-image').className = "none";
+    $('#code').removeClass('inner-code-dark-one');
+    $('#code').removeClass('inner-code-dark');
+    $('#code').addClass('inner-code');
 
     switch (containerName) {
       case "PengWin":
@@ -251,6 +267,7 @@ $(window).resize(function () {
     if (itemName !== "#projects") {
       $(itemName + "Collapse").collapse('show', true);
       $('#projectsCollapse').addClass('none');
+
     }
     else {
       $('#projectsCollapse').removeClass('none');

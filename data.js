@@ -72,7 +72,204 @@ var projectData = {
       "upon submitting an initial query.</span></li>" +
       "<li class='project-details-list'><span>I expanded on the basic logic of the search engine by implementing two-gram indexing which " +
       "allowed the order of two word searches to take priority over the two words individually ranked.</span></li> ",
-    "imagesText": `<div class='card-img'> </div>`
+    "imagesText": `<div class='card-img'> </div>`,
+    "code":
+      `  
+    import os
+    from nltk import WordNetLemmatizer
+    from lxml import html
+    import re
+    import math
+    import sys
+    from bs4 import BeautifulSoup as Soup
+    import warnings
+    
+    
+    class TokenizeContent:
+    
+        # treats warnings as errors so we can catch them using bs4
+        warnings.simplefilter('error', UserWarning)
+    
+        # nltk.download('wordnet')
+        lemmatizer = WordNetLemmatizer()
+    
+        def create_markup_dict(self, markupDict: dict, line: str):
+            try:
+                soup = Soup(line, "html.parser")
+                for section in soup.find_all(['h5', 'h6', 'i', 'u']):
+                    for word in self.getValidWords(section.text):
+                        if word in markupDict.keys():
+                            markupDict[word] += 0.5
+                        else:
+                            markupDict[word] = 0.5
+                for section in soup.find_all(['h2', 'h3', 'h4', 'bold', 'strong', 'a']):
+                    for word in self.getValidWords(section.text):
+                        if word in markupDict.keys():
+                            markupDict[word] += 1
+                        else:
+                            markupDict[word] = 1
+                for section in soup.find_all('h1'):
+                    for word in self.getValidWords(section.text):
+                        if word in markupDict.keys():
+                            markupDict[word] += 2
+                        else:
+                            markupDict[word] = 2
+                for section in soup.find_all('title'):
+                    for word in self.getValidWords(section.text):
+                        if word in markupDict.keys():
+                            markupDict[word] += 3
+                        else:
+                            markupDict[word] = 3
+            except UserWarning:
+                pass
+    
+    
+        def tokenize_words_in_line(self, snippetArr, urlsAndContentDict: dict, 
+          indexDictionary: dict,
+          helperArrayPositionDict: dict, line: str, 
+          urlName: str, markUpDict: dict, corpusSize):
+            try:
+    
+                # remove html markup
+                htmlParse = html.document_fromstring(line.encode("utf-8"))
+                content = htmlParse.text_content()
+    
+                content = content.strip()
+                content = content.lower()
+    
+                # Split words by space and punctuation
+                for word in re.split('! |!|; |;|, |,|\s+|\.', content):
+    
+                    if word not in self.stop_words:
+                        word.replace('\'', '')
+                        word.replace('\"', '')
+                        word.replace('-', '')
+                        word.replace('(', '')
+                        word.replace(')', '')
+    
+                        # If its alphanumeric, but we allow # and $
+                        if re.fullmatch(r"[#$a-zA-Z0-9]{2,}", word):
+    
+                            # Include this valid token in the returned snippet array
+                            snippetArr.append(word)
+    
+                            # Example: removes s from plural words
+                            wordAfterLemmatizer = self.lemmatizer.lemmatize(word)
+    
+                            if wordAfterLemmatizer:
+                                # ADDED / IN FRONT OF $ TO NOT BREAK DATABASE
+                                wordAfterLemmatizer = self.hideFirstCharDollarSign(wordAfterLemmatizer)
+    
+                                # Update content dictionary
+                                if wordAfterLemmatizer in urlsAndContentDict[urlName]['words']:
+                                    urlsAndContentDict[urlName]['words'][wordAfterLemmatizer] += 1
+                                else:
+                                    urlsAndContentDict[urlName]['words'][wordAfterLemmatizer] = 1
+    
+    
+                            # if token is not yet in dictionary, insert it, with the value
+                            # set to an empty dict.
+                            position = -1
+    
+                            if wordAfterLemmatizer not in indexDictionary:
+    
+                                indexDictionary[wordAfterLemmatizer] = dict()
+                                indexDictionary[wordAfterLemmatizer]['word'] = wordAfterLemmatizer
+                                
+                                # # INNER dict for the URL's keys (urlName and tf)
+                                # indexDictionary[wordAfterLemmatizer]['urls'] = dict()
+                                indexDictionary[wordAfterLemmatizer]['urls'] = []
+                                indexDictionary[wordAfterLemmatizer]['urls'].append({
+                                    'urlName': urlName,
+                                    'tf': 1
+                                })
+    
+                                # add the word to the arr index helper dict so we can know what
+                                # INDEX the dictionary with the URL is at so we dont have to
+                                # loop over it checking (cant index it in a list)
+                                helperArrayPositionDict[wordAfterLemmatizer] = dict()
+                                helperArrayPositionDict[wordAfterLemmatizer]['word']/
+                                 = wordAfterLemmatizer
+    
+                                # we know its at index 0 since the URL list is empty in this if
+                                helperArrayPositionDict[wordAfterLemmatizer]['urls'] = dict()
+                                helperArrayPositionDict[wordAfterLemmatizer]['urls'][urlName] = 0
+    
+                            # token already in our index
+                            else:
+    
+    
+                                # check if URL is in the helper so we can get
+                                # the array index number to alter the entry
+                                if urlName in helperArrayPositionDict[wordAfterLemmatizer]['urls']:
+                                    position = helperArrayPositionDict[wordAfterLemmatizer]['urls'][urlName]
+    
+                                    # update the dictionary at that position
+                                    indexDictionary[wordAfterLemmatizer]['urls'][position]['tf'] += 1
+    
+                                    # url must be appended to the list, and that index must be added to the
+                                # helper dictionary
+                                else:
+                                    indexDictionary[wordAfterLemmatizer]['urls'].append({
+                                        'urlName': urlName,
+                                        'tf': 1
+                                    })
+    
+                                    position = len(indexDictionary[wordAfterLemmatizer]['urls']) - 1
+                                    helperArrayPositionDict[wordAfterLemmatizer]['urls'][urlName] = position
+    
+                            lengthOfUrlDictionary = len(indexDictionary[wordAfterLemmatizer]['urls'])
+    
+                            indexDictionary[wordAfterLemmatizer]['df'] = lengthOfUrlDictionary
+    
+                            # Calculate the tfidf for every search
+                            tf = indexDictionary[wordAfterLemmatizer]['urls'][position]['tf']
+    
+                            tfidf = self.getTfidf(int(tf), int(lengthOfUrlDictionary), corpusSize)
+    
+                            indexDictionary[wordAfterLemmatizer]['urls'][position]['tfidf'] = math.log(tfidf)
+    
+                # IF THE WORD IS IN SPECIAL MARKUP: add the tf that was in the already scanned markUpDict
+                for word, additionalTf in markUpDict.items():
+                    if word in urlsAndContentDict[urlName]['words']:
+                        urlsAndContentDict[urlName]['words'][word] += additionalTf
+    
+            except Exception as e:
+                if str(e) != 'Document is empty':
+                    exc_type, exc_obj, exc_tb = sys.exc_info()
+                    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    
+    
+        def getTfidf(self, tf, df, totalDocs):
+            return (1 + math.log(tf)) * math.log(totalDocs / df)
+    
+        def hideFirstCharDollarSign(self, stringToCheck):
+            while stringToCheck[0] == '$':
+                stringToCheck = '/' + stringToCheck
+            return stringToCheck
+        
+        def getValidWords(self, content):
+            validWords = []
+            content = content.strip()
+            content = content.lower()
+            for word in re.split('! |!|; |;|, |,|\s+|\.', content):
+                if word not in self.stop_words:
+                    word.replace('\'', '')
+                    word.replace('\"', '')
+                    word.replace('-', '')
+                    word.replace('(', '')
+                    word.replace(')', '')
+    
+                    if re.fullmatch(r"[#$a-zA-Z0-9]{2,}", word):
+                        wordAfterLemmatizer = self.lemmatizer.lemmatize(word)
+    
+                        # ADDED / IN FRONT OF $ TO NOT BREAK DATABASE
+                        if wordAfterLemmatizer:
+                            wordAfterLemmatizer = self.hideFirstCharDollarSign(wordAfterLemmatizer)
+    
+                        validWords.append(wordAfterLemmatizer)
+            return validWords
+    `
   },
 
   "UntitledJaneGame": {
