@@ -827,7 +827,7 @@ li.project-details-list::before {
 
 @media (max-width: 500px) {
   .modal-content {
-    max-width: 80%;
+    max-width: 80% !important;
     margin-top: 60px !important;
     margin-bottom: 30px !important;
   }
