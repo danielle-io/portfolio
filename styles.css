@@ -301,7 +301,6 @@ body {
   margin-top: 10px;
 }
 
-
 .first-name-light {
   color: rgb(194, 51, 105);
   -webkit-animation: slide-bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) .6s both, color-change-light 4s;
@@ -454,7 +453,7 @@ body {
   margin: auto;
 }
 
-.social-links-no-js{
+.social-links-no-js {
   font-size: 4em;
   display: flex;
   justify-content: center;
@@ -509,7 +508,7 @@ body {
 
 /* ABOUT PAGE */
 
-.about-buttons{
+.about-buttons {
   font-size: 12px !important;
 }
 
@@ -630,16 +629,14 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.project-buttons{
+.project-buttons {
   font-size: 11px !important;
 }
 
-
-.animate-containers { 
+.animate-containers {
   -webkit-animation: enter-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: enter-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
 
 /* Projects Nav */
 
@@ -733,9 +730,6 @@ button:focus {
   background-image: linear-gradient(120deg, rgba(255, 250, 250, 0.274) 0%, rgba(219, 229, 236, 0.404) 100%);
 }
 
-.page-body-bckg-dark {
-}
-
 .card-columns {
   margin-top: 12px;
   -webkit-column-count: 2;
@@ -793,6 +787,18 @@ li.project-details-list::before {
 
 .modal-dialog {
   min-width: 60%;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+  .modal-dialog {
+    /* max-width: 60%; */
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+  }
 }
 
 .modal-expanded {

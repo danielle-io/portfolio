@@ -155,13 +155,7 @@ $(window).resize(function () {
       var element = $('#' + trimmedId + "Card");
       $('html, body').animate({ scrollTop: $(element).offset().top - 200 }, 'slow');
     });
-
-    
-    $('.about-links').on('click', function (event) {
-      console.log("hi");
-      event.stopPropagation();
-    });
-
+   
 
     $('.card-flip').click(function (e) { 
       console.log(e);
