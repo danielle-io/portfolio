@@ -150,16 +150,21 @@ $(window).resize(function () {
 
 
     $('.mdl-button').on('click', function (event) {
-      console.log(this.id);
       var element = document.getElementById(this.id);
-
       var trimmedId = this.id.slice(0, -1)
-
       var element = $('#' + trimmedId + "Card");
       $('html, body').animate({ scrollTop: $(element).offset().top - 200 }, 'slow');
     });
 
-    $('.card-flip').click(function (e) {
+    
+    $('.about-links').on('click', function (event) {
+      console.log("hi");
+      event.stopPropagation();
+    });
+
+
+    $('.card-flip').click(function (e) { 
+      console.log(e);
       var $card = $(this);
       if ($card.hasClass("flipped")) {
         $card.removeClass('flipped');
@@ -239,7 +244,6 @@ $(window).resize(function () {
         descriptionText = "";
         break;
     }
-    console.log(containerName);
     document.getElementById('titleText').innerHTML = titleText;
     document.getElementById('descriptionText').innerHTML = descriptionText;
     document.getElementById('accomplishmentsText').innerHTML = accomplishmentsText;
@@ -255,13 +259,19 @@ $(window).resize(function () {
 
   function collapseAndExpandContainers(itemName) {
     $('.collapse').collapse('hide', true);
-    if (itemName !== "#projects") {
-      $(itemName + "Collapse").collapse('show', true);
-      $('#projectsCollapse').addClass('none');
 
+    if (itemName === "#projects") {
+      $('#projectsCollapse').removeClass('none');
+      $('#aboutCollapse').addClass('none');
+    }
+    else if (itemName === "#about") {
+      $('#aboutCollapse').removeClass('none');
+      $('#projectsCollapse').addClass('none');
     }
     else {
-      $('#projectsCollapse').removeClass('none');
+      $(itemName + "Collapse").collapse('show', true);
+      $('#projectsCollapse').addClass('none');
+      $('#aboutCollapse').addClass('none');
     }
     $('html, body').animate({ scrollTop: 0 }, 'fast');
   }

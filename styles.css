@@ -162,6 +162,46 @@ body {
   }
 }
 
+.mdl-button {
+  background-color: white !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  padding: 10;
+  box-shadow: none !important;
+  border: none !important;
+  background-color: transparent !important;
+  margin: 0px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+  outline: none;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.mdl-button-light {
+  color: #b66ca7;
+}
+
+.mdl-button-dark {
+  color: #d5aad8;
+}
+
+.mdl-button:hover {
+  font-weight: 600;
+  transform: scale(1.1);
+}
+
+.animate-nav {
+  animation: 1.5s ease-out 0s 1 slideInFromLeft !important;
+  position: fixed !important;
+  display: flex;
+  width: 100% !important;
+  justify-content: center;
+  z-index: 999 !important;
+}
+
 .navbar-brand {
   font-size: 16px !important;
 }
@@ -469,6 +509,10 @@ body {
 
 /* ABOUT PAGE */
 
+.about-buttons{
+  font-size: 12px !important;
+}
+
 .card-subtitle {
   color: #17a2b8;
   font-family: 'Poppins', sans-serif;
@@ -586,51 +630,16 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.mdl-button {
-  background-color: white !important;
-  height: 50px !important;
-  min-width: 50px !important;
-  padding: 10;
-  font-size: 10px !important;
-  box-shadow: none !important;
-  border: none !important;
-  background-color: transparent !important;
-  margin: 0px;
-  text-transform: uppercase;
-  display: inline-block;
-  text-decoration: none;
-  vertical-align: middle;
-  text-align: center;
-  outline: none;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+.project-buttons{
+  font-size: 11px !important;
 }
 
-.mdl-button-light {
-  color: #b66ca7;
-}
-
-.mdl-button-dark {
-  color: #d5aad8;
-}
-
-.mdl-button:hover {
-  font-weight: 600;
-  transform: scale(1.1);
-}
 
 .animate-containers { 
-  -webkit-animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: enter-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: enter-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.animate-nav {
-  animation: 1.5s ease-out 0s 1 slideInFromLeft !important;
-  position: fixed !important;
-  display: flex;
-  width: 100% !important;
-  justify-content: center;
-  z-index: 999 !important;
-}
 
 /* Projects Nav */
 
@@ -645,7 +654,7 @@ body {
 
 /* Projects */
 
-@-webkit-keyframes scale-in-hor-left {
+@-webkit-keyframes enter-left {
   0% {
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -662,7 +671,7 @@ body {
   }
 }
 
-@keyframes scale-in-hor-left {
+@keyframes enter-left {
   0% {
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
