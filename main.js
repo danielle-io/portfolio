@@ -7,6 +7,7 @@ document.getElementById('code-search-engine').innerHTML = searchEngineCode;
 var $window = $(window);
 
 function checkWindowWidth() {
+
   var windowWidth = $window.width();
 
   // Toggle label change
@@ -35,6 +36,8 @@ function checkWindowWidth() {
     $('.virtualHelpImages').removeClass('none');
     $("iframe").height(900);
   }
+  $('.custom-control-label').removeClass('none');
+
 }
 
 function lightModeSettings() {
@@ -103,16 +106,16 @@ $(window).resize(function () {
       if (!$('#' + this.id).hasClass("nav-active")) {
         removeActiveFromNavItems('#' + this.id);
         collapseAndExpandContainers('#' + this.id);
-        
+
         if (this.id === "projects" || this.id === "about") {
           $('#second-nav').removeClass('none');
           if ($(darkModeSwitch).prop("checked")) {
             $('#pageBody').addClass('page-body-bckg-dark');
           }
-          else{
+          else {
             $('#pageBody').addClass('page-body-bckg-light');
           }
-          if (this.id === "about"){
+          if (this.id === "about") {
             $('.project-buttons').addClass('none');
             $('.about-buttons').removeClass('none');
           }
@@ -150,7 +153,7 @@ $(window).resize(function () {
       console.log(this.id);
       var element = document.getElementById(this.id);
 
-      var trimmedId = this.id .slice(0, -1) 
+      var trimmedId = this.id.slice(0, -1)
 
       var element = $('#' + trimmedId + "Card");
       $('html, body').animate({ scrollTop: $(element).offset().top - 200 }, 'slow');
@@ -159,27 +162,14 @@ $(window).resize(function () {
     $('.card-flip').click(function (e) {
       var $card = $(this);
       if ($card.hasClass("flipped")) {
-          $card.removeClass('flipped');
+        $card.removeClass('flipped');
       } else {
-          $card.addClass('flipped');
+        $card.addClass('flipped');
       }
-  });
-
-    // $('.card-flip').on('click', function (event) {
-
-    //   $('.card-face card-face--front').css('animation', 'none');
-    //   $('.card-face card-face--back hide-element').css('animation', 'none');
-
-    //   var element = document.getElementById(this.id);
-    //   element.classList.toggle("is-flipped");
-
-    //   $('#' + this.id + 'Front').toggle('hide-element');
-    //   $('#' + this.id + 'Back').toggle('hide-element');
-
-    //   // Scroll to top of card on click
-    //   var element = $('#' + this.id);
-    //   $('html, body').scrollTop(element.offset().top - 200);
-    // });
+      // Scroll to top of card on click
+      var element = $('#' + this.id);
+      $('html, body').scrollTop(element.offset().top - 200);
+    });
 
     $('.project-modal-link').on('click', function (event) {
       getProjectModalText(event.target.id);
