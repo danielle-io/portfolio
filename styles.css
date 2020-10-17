@@ -782,7 +782,7 @@ button:focus {
 li.project-details-list::before {
   content: "• ";
   color: inherit !important;
-  font-size: 20px;
+  font-size: 14px !important;
 }
 
 .modal-dialog {
