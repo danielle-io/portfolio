@@ -56,7 +56,7 @@ var projectData = {
       "</span></li>",
     "imagesText":
       `<div class= 'card-img' >
-      <img src='/images/virtualHelp2.gif' alt='A demo rating a tutoring session on the Virtual Help UI'
+      <img src='./images/virtualHelp2.gif' alt='A demo rating a tutoring session on the Virtual Help UI'
         class='d-block w-100'></div>`
   },
 
