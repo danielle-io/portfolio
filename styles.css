@@ -495,9 +495,6 @@ body {
 }
 
 .card-flip {
-  perspective: 800;
-  -moz-perspective: 800;
-  -webkit-perspective: 800;
   margin: 1em auto;
   width: 80%;
   border: solid 1em white;
@@ -593,22 +590,17 @@ body {
   background-color: white !important;
   height: 50px !important;
   min-width: 50px !important;
-  /* width: 50px !important; */
   padding: 10;
-  overflow: show;
   font-size: 10px !important;
   box-shadow: none !important;
   border: none !important;
-  /* border-radius: 2px; */
   background-color: transparent !important;
-  margin: 0;
+  margin: 0px;
   text-transform: uppercase;
   display: inline-block;
   text-decoration: none;
   vertical-align: middle;
   text-align: center;
-  /* will-change: box-shadow; */
-  /* transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1); */
   outline: none;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
