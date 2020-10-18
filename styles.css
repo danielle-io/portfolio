@@ -1129,13 +1129,13 @@ li.project-details-list span {
 @media (max-width: 500px) {
   .inner-code {
     font-size: 8px;
-    max-height: 147px;
+    max-height: 136px;
     margin-left: 69px;
     margin-top: -28px;
     }
   .inner-code-dark {
     font-size: 8px;
-    max-height: 148px;
+    max-height: 143px;
     margin-left: 77px;
   }
   .search-engine-code {
@@ -1146,7 +1146,7 @@ li.project-details-list span {
   .inner-code-dark-one {
     color: rgb(56, 50, 50);
     font-size: 8px;
-    max-height: 119px;
+    max-height: 114px;
     margin-left: 75px;
   }
   .scheduley-code {
