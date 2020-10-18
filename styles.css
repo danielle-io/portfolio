@@ -764,6 +764,10 @@ button:focus {
   background-image: linear-gradient(120deg, rgba(255, 250, 250, 0.274) 0%, rgba(219, 229, 236, 0.404) 100%);
 }
 
+.no-bckg{
+  background-color: transparent;
+}
+
 .card-columns {
   margin-top: 12px;
   -webkit-column-count: 2;
