@@ -1,15 +1,13 @@
 var projectData = {
-  "PengWin":
-  {
-    "descriptionText":
-      `The Innovation Lab presented the idea for this application, and my team and I spent 20 weeks researching, designing, and 
+  PengWin: {
+    descriptionText: `The Innovation Lab presented the idea for this application, and my team and I spent 20 weeks researching, designing, and 
       coding this project. I was one of the two lead developers on this project, responsible for bringing the research and design 
       team's ideas to life on this cross-platform, user-friendly application.
       Task completion was validated using image recognition utilizing Google Vision's API. Some features included: 
       creation of routines & activities, dropdown menus with autofill, image and video embedding, deletion, 
       duplication, and modification available on activities, routines and rewards, the ability to add custom labels to routines, 
       two user interfaces - one for children and one for parents.`,
-    "accomplishmentsText":
+    accomplishmentsText:
       "<li class='project-details-list'><span>I built out a de-coupled, normalized, relational database schema, " +
       "and managed both the user data and user image databases.</span></li>" +
       "<li class='project-details-list'><span>I implemented image recognition functionality to " +
@@ -22,13 +20,12 @@ var projectData = {
       "<li class='project-details-list'><span>For increased convenience for the user, I created the ability to make public activities, which can be " +
       "discovered, copied, and modified to a user's liking. These items are stored in read-only mode until added to a user's " +
       "catalogue, where they then become part of their available options.</span></li>",
-    "imagesText": ""
+    imagesText: "",
   },
 
-  "VirtualHelp": {
-    "titleText": "Virtual Help",
-    "descriptionText":
-      `Virtual Help is an online tutoring solution for connecting students with TAs to get assistance on the project.  
+  VirtualHelp: {
+    titleText: "Virtual Help",
+    descriptionText: `Virtual Help is an online tutoring solution for connecting students with TAs to get assistance on the project.  
       I led my team in creating this system for a UCI Professor that wanted a solution for accomodating the tutoring needs of students  
       with the virtual limitations presented by COVID-19. The system allows students to select their course, describe their issues, attach  
       files, and even input formatted code in a special code-friendly text box on our UI. Tutors can see all open requests in order of submission  
@@ -39,7 +36,7 @@ var projectData = {
       The application does everything in real-time, and addresses both success and failure scenarios for pairing students with TAs.  
       Additionally, a CMS system allows the application's control to lie in the hands of administrators, who are able to adjust user permissions  
       and availble courses that can be addressed on the application.`,
-    "accomplishmentsText":
+    accomplishmentsText:
       "<li class='project-details-list'><span>I fully designed the application's UI using Adobe XD and Figma, then " +
       "wrote the code to bring the mockups to life.</span></li> " +
       "<li class='project-details-list'><span>I researched and chose the application tech stack, including selecting Vue.js for the " +
@@ -54,27 +51,63 @@ var projectData = {
       "application users, permissions and courses.</span></li>" +
       "<li class='project-details-list'><span>I designed and implemented the session rating system on the front and backend." +
       "</span></li>",
-    "imagesText":
-      `<div class= 'card-img' >
+    imagesText: `<div class= 'card-img' >
       <img src='./images/virtualHelp2.gif' alt='A demo rating a tutoring session on the Virtual Help UI'
-        class='d-block w-100'></div>`
+        class='d-block w-100'></div>`,
+  },
+  ZKeeper: {
+    titleText: "z-keeper",
+    descriptionText: `Z-Keeper is a simple mobile application that works on both Android and IOS. Users are able to track their sleep 
+      as well as how tired they are feeling throughout the day, which provides some insight into how the amount of sleep they 
+      get affects them. Using Ionic Storage, the data a user enters is kept locally, and will persist upon loading up the application. 
+      The user interface caters to both new and existing users, with a tiredness slider scale for users familiar with the ratings, 
+      and a tiredness list view for new users, that sync with one another, allowing users to toggle back and forth between the two 
+      views when deciding what rating to submit.`,
+    accomplishmentsText: `<li class='project-details-list'><span>I fully designed the application's UI using mobile UI guidelines.</span></li> 
+      <li class='project-details-list'><span>I utilized Ionic Services to query and store data in Ionic Storage.</span></li>
+      <li class='project-details-list'><span>I implemented bottom navigation using Ionic Tabs, and ensured data persists between pages.</span></li>`,
+    imagesText: `<div class= 'card-img'>
+      <img src='./images/zKeeperLogs.png' alt='The logs page of the z-keeper application'
+        class='d-block w-50 mobile-images'></div>
+       <div style='margin-top: 25px;'></div>
+        <img src='./images/zKeeperTrack.png' alt='The sleep tracking page of the z-keeper application'
+        class='d-block w-50 mobile-images'></div>`,
   },
 
+  WICSJobs: {
+    titleText: "WICS Jobs",
+    descriptionText: `WICS Jobs allows users to anonymously submit job data, and learn about ratings from WICS members 
+    at companies that interest them. This was a quick project we worked on for just a few days. We imported the data
+    by converting a Google Form .csv to JSON, after splitting the contact info from the ratings, to ensure anonymity.`,
+    accomplishmentsText: `<li class='project-details-list'><span>I fully designed the application's UI.</span></li> 
+      <li class='project-details-list'><span>I implemented an interactive map using a JavaScript library. I modified the library to multiply 
+      the state's opacity based on the amount of entries submitted for that state.</span></li>
+      <li class='project-details-list'><span>I added on click state facts so there's something to display when a state has no relevant user data.</span></li>
+      <li class='project-details-list'><span>I implemented TypeScript classes for converting user data to uniform formats, and added 
+      state abbreviation and state fact classes.</span></li>`,
+    imagesText: `<div class= 'card-img'>
+      <img src='./images/WICSJobsMap.png' alt='The state map view of the WICS Jobs application'
+        class='d-block mobile-images' style='width: 70%;'>
+        <div style='margin-top: 25px;'></div>
+        <img src='./images/WICSJobsSumTable.png' alt='The summary review table on the WICS Jobs application'
+        class='d-block mobile-images' style='width: 70%;'>
+        <div style='margin-top: 25px;'></div>
+        <img src='./images/WICSJobsIndTable.png' alt='The individual review table on the WICS Jobs application'
+        class='d-block mobile-images' style='width: 70%;'>`,
+  },
 
-  "ICSSearchEngine": {
-    "titleText": "ICS Search Engine",
-    "descriptionText":
-      `I worked with two teammates to learn the ins and outs of search engine  
+  ICSSearchEngine: {
+    titleText: "ICS Search Engine",
+    descriptionText: `I worked with two teammates to learn the ins and outs of search engine  
       logic, then applied the logic to our own search engine, using the webpages within the UCI ICS website.`,
-    "accomplishmentsText":
+    accomplishmentsText:
       "<li class= 'project-details-list'> <span>I wrote the UI for the application, modeling the design after " +
       "popular search engines with a centered search bar on the home page that shifts to the top of the results page " +
       "upon submitting an initial query.</span></li>" +
       "<li class='project-details-list'><span>I expanded on the basic logic of the search engine by implementing two-gram indexing which " +
       "allowed the order of two word searches to take priority over the two words individually ranked.</span></li> ",
-    "imagesText": `<div class='card-img'> </div>`,
-    "code":
-      `  
+    imagesText: `<div class='card-img'> </div>`,
+    code: `  
     import os
     from nltk import WordNetLemmatizer
     from lxml import html
@@ -269,24 +302,22 @@ var projectData = {
     
                         validWords.append(wordAfterLemmatizer)
             return validWords
-    `
+    `,
   },
 
-  "UntitledJaneGame": {
-    "titleText": "Untitled Jane Game",
-    "descriptionText":
-      `Our character is Jane Deux, a software engineer with big dreams and a college degree. After having already completed the “intern grind”
+  UntitledJaneGame: {
+    titleText: "Untitled Jane Game",
+    descriptionText: `Our character is Jane Deux, a software engineer with big dreams and a college degree. After having already completed the “intern grind”
     during her years in school, Jane won’t settle for anything less than what she deserves out in the real world. Jane’s goal is to climb the
     corporate ladder and prove herself as a strong and capable engineer, despite the stereotypes and challenges involved with being a minority
     in the tech industry. Jane’s new place of work is at a small startup with a male majority workforce in the Californian town of Arsenic Valley.`,
-    "accomplishmentsText":
+    accomplishmentsText:
       "<li class='project-details-list'> <span>I led development on the project alongside one other developer," +
       " learning Unity on my own and coming up with the level concepts and conditions.</span></li>" +
       "<li class='project-details-list'><span>I wrote the dialogue, designed, and coded all of the intro screens and animations using the sprites " +
       "created by the design team.</span></li>",
-    "imagesText": `<div class='card-img' > </div>`,
-    "code":
-      `              
+    imagesText: `<div class='card-img' > </div>`,
+    code: `              
       using UnityEngine;
 
       namespace WickedStudios
@@ -405,14 +436,11 @@ var projectData = {
         }
     }
 }
-  `
-
+  `,
   },
-  "Scheduley":
-  {
-    "titleText": "Scheduley",
-    "descriptionText":
-      `This idea came to my teammate and I during a hackathon. We wanted a solution for group 
+  Scheduley: {
+    titleText: "Scheduley",
+    descriptionText: `This idea came to my teammate and I during a hackathon. We wanted a solution for group 
       scheduling that solved the problems the current popular systems presented.
       Between friends and clubs, there are a lot of events to organize, each with its own set of
       different schedules to consider. The current solution is to use a site called when2meet where
@@ -424,14 +452,14 @@ var projectData = {
       is available. New members can access and add their calendar by simply entering the calendar 
       name and password. Because Scheduley relies on Google Calendar information rather than user input, the user
       will never have to re-enter their availability for any group they join.`,
-    "accomplishmentsText":
+    accomplishmentsText:
       "<li class='project-details-list'> <span>I built out an interactive UI that " +
       "simplified creating and sharing calendars across groups.</span></li>" +
       "<li class='project-details-list'><span>I was able to strategically display user data so as not to " +
       "reveal user's personal information by replacing events text with a user's name for group member's " +
       "to see. </span></li>",
-    "imagesText": `<div class='card-img'> </div> `,
-    "code": `
+    imagesText: `<div class='card-img'> </div> `,
+    code: `
     let calendarResponse;
     let globalCalendar = [];
     
@@ -550,6 +578,6 @@ var projectData = {
             }
         return displayStructure;
         }
-    });`
-  }
-}
+    });`,
+  },
+};
