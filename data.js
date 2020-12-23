@@ -28,7 +28,7 @@ var projectData = {
     descriptionText: `Virtual Help is an online tutoring solution for connecting students with TAs to get assistance on the project.  
       I led my team in creating this system for a UCI Professor that wanted a solution for accomodating the tutoring needs of students  
       with the virtual limitations presented by COVID-19. The system allows students to select their course, describe their issues, attach  
-      files, and even input formatted code in a special code-friendly text box on our UI. Tutors can see all open requests in order of submission  
+      files, and even input formatted code in a special code-friendly text box on our UI. Tutors can see all open requests in order of submission, 
       select the one they choose to assist with, and the student is then notified of the pending session. The student has 60 seconds to accept the  
       session, and upon acceptance, both the student and the tutor are directed to a private Zoom meeting to address the student's questions.  
       The application allows TAs and students to see their session histories, and students can re-submit previously closed or missed sessions  
